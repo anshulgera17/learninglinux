@@ -1,28 +1,26 @@
 #!/bin/bash
 # Delete files and folder which are older than 5 days
-find /path/to/directory/ -mindepth 1 -mtime +5 -delete
+ find /path/to/directory/ -mindepth 1 -mtime +5 -delete
 # check last rebootsalt
  last reboot
 # find the file name in server
  locate -e filename
 #--------------------------------------------------------------------------------------------------------------------------------
-ftp hostname
-or
-ftp://username:password@hostname
+ ftp hostname
+ # or
+ ftp://username:password@hostname
 # Now, once connected the 5 most common options are:
-
-cd foldername      #e.g. cd /downloads/recent
-get filename       #e.g. get thisisthefileiwant.text
-put filename       #e.g. put sendthistotheserver.txt
-mget filenameregex #e.g mget * to get every file in a directory
-mput filemameregex #e.g. mput *.txt to upload every txt file to the server
---------------------------------------------------------------------------------------------------------------------------------
+ cd foldername      #e.g. cd /downloads/recent
+ get filename       #e.g. get thisisthefileiwant.text
+ put filename       #e.g. put sendthistotheserver.txt
+ mget filenameregex #e.g mget * to get every file in a directory
+ mput filemameregex #e.g. mput *.txt to upload every txt file to the server
+# Command for set the timezone in ec2 instance
  sudo dpkg-reconfigure tzdata 
-# Command for set the timezone in ec2 instance.
---------------------------------------------------------------------------------------------------------------------------------
+#--------------------------------------------------------------------------------------------------------------------------------
 # Create the logical volume and add to the existing logical volume in ubuntu EC2 instance.
-lsblk
-vgdisplay
+ lsblk
+ vgdisplay
 # created instance LVM-Testing
 # and create 3 volumes (volume1 + volume2 + volume3 ) + 1 volume( volume4)
 # add first 3 volumes in 1 logical volume name volumeall
@@ -67,12 +65,12 @@ vgdisplay
  sudo ethtool eth4
 #-----------------------------------------------------------------------------------------------------------------------------
 # Database commands
-Mysql  –u MEDDBA –p
+ mysql  –u MEDDBA –p
 # Masterkey
-Show databases;
-Use mysql;
-Show tables;
-Describe tablename;
+ show databases;
+ use mysql;
+ show tables;
+ describe tablename;
 # Check the system level logs
  /var/log/dmesg
  /var/log/kern.log
@@ -84,37 +82,36 @@ Describe tablename;
  netstat -r  # for routing table 
 
 #----------------------------------------------------------------------------------------------------------------------------
-Pssh # for run a command in multiple server
-Pscp # for copy file in multiple servers
-Prsync # for efficient copy
-Pnuke # for killing processes in multiple servers
-Pslurp
+ Pssh # for run a command in multiple server
+ Pscp # for copy file in multiple servers
+ Prsync # for efficient copy
+ Pnuke # for killing processes in multiple servers
+ Pslurp
 #----------------------------------------------------------------------------------------------------------------------------
 # for search and replace  
-sed -i -e 's/.xml//g' /tmp/foo.txt 
+ sed -i -e 's/.xml//g' /tmp/foo.txt 
 # For check the OS version 
-cat /etc/os-release
+ cat /etc/os-release
 # For open  the log files  
-  less filename
+ less filename
 # checking the free space 
  df   -h
 # show the list of files according to size  
  ls –ltrhS
-
 # TOP 10 Files which are having max size in whole system 
  du  -a  / | sort  -n  -r | head  -n 10 
  find / -size +1G -size -3G 2>> /dev/null
 
 # copy files or folder from one server to another à scp filename  server name or IP:/path/
-   scp  -r foldername server name or IP:/path/
+ scp  -r foldername server name or IP:/path/
 # Kill any process   
  kill -9 processId
 # search the process by its name      	
  ps  -aux | grep process name
 # For display all the processes
-    ps  -ef  
+ ps  -ef  
 # display all the processes and how much memory, cpu time, user, pid à 
-top
+ top
 # script for search files have .mxf and .xml with same mat id:
          for entry in "."/*.xml
          do

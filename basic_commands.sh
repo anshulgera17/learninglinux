@@ -1,7 +1,13 @@
 #!/bin/bash
+curl # tool for transferring data using various network protocols
+nslookup # The domain name you want to look up
+apt-get install # package management
+yum # package management
+find # for search file in system
+top, htop # check process status
+netstat # displays network connections for Transmission Control Protocol, routing tables, and a number of network interface and network protocol statistics
 ls   # list all directory and files
-ls -ltrh
-cd   # change directory
+cd folder_name  # change directory
 cd.. # p1 level in directory
 pwd  # print working directory
 cp   # copy
@@ -15,7 +21,7 @@ history # print recently used commands
 cat  # concatenate files and print on the standard output
 echo # display a line of text
 grep # print lines matching a pattern
-grep -r 'string', egrep, zgrep -e
+# examples of grep : grep -r 'string', egrep, zgrep -e
 wc # print the number of newlines words and bytes in files
 sort #sort lines of text file
 chmod # change file access permission
@@ -34,16 +40,10 @@ fdisk # partition manipulator
 tail file_name # print last 10 lines of a file.
 free # to check the RAM of a server
 nproc #number of CPUs in a server.
-cut
-paste
+cut #
+paste #
 sed # used for modifying the files
 awk # find and replaces text
 diff # identify the deferences between 2 files
-more 
-
-
-
-
-
-
+more # 
 
