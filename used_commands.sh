@@ -1,4 +1,6 @@
 #!/bin/bash
+# finding the 20 files which are having max size  
+ find / -xdev -type f -size +100000c -exec ls -la {} \; 2>/dev/null | sort -nk5 | tail -20
 # Delete files and folder which are older than 5 days
  find /path/to/directory/ -mindepth 1 -mtime +5 -delete
 # check last rebootsalt
@@ -17,7 +19,6 @@
  mput filemameregex #e.g. mput *.txt to upload every txt file to the server
 # Command for set the timezone in ec2 instance
  sudo dpkg-reconfigure tzdata 
-#--------------------------------------------------------------------------------------------------------------------------------
 # Create the logical volume and add to the existing logical volume in ubuntu EC2 instance.
  lsblk
  vgdisplay
@@ -39,16 +40,14 @@
  sudo lvextend -L +20G   /dev/precise-build
  sudo resize2fs /dev/precise-build/root
  sudo mkfs.ext3 /dev/volumeall/fedora64-1
-#-------------------------------------------------------------------------------------------------------------------------------
- sudo chkconfig httpd on 
 # Use chkconfig command for make service as startup service 
- cd ~/.ssh/
+ sudo chkconfig httpd on 
 # Find authorized keys 
+ cd ~/.ssh/
 # tcp dump in network
  tcpdump -i lo 
 #-----------------------------------------------------------------------------------------------------------------
  grep -r udp
-#-----------------------------------------------------------------------------------------------------------------------------
 # Find any word in unknown file 
  find . -name "*.txt" -exec grep -i "any word" {} \;
 -----------------------------------------------------------------------------------------------------------------------------
@@ -79,29 +78,27 @@
  % dig +short stackoverflow.com
 # check the port is active or not   
  netstat -tuplen
- netstat -r  # for routing table 
-
+# for routing table
+ netstat -r   
 #----------------------------------------------------------------------------------------------------------------------------
  Pssh # for run a command in multiple server
  Pscp # for copy file in multiple servers
  Prsync # for efficient copy
  Pnuke # for killing processes in multiple servers
  Pslurp
-#----------------------------------------------------------------------------------------------------------------------------
 # for search and replace  
  sed -i -e 's/.xml//g' /tmp/foo.txt 
 # For check the OS version 
  cat /etc/os-release
-# For open  the log files  
+# For open the log files  
  less filename
 # checking the free space 
- df   -h
+ df -h
 # show the list of files according to size  
  ls –ltrhS
 # TOP 10 Files which are having max size in whole system 
  du  -a  / | sort  -n  -r | head  -n 10 
  find / -size +1G -size -3G 2>> /dev/null
-
 # copy files or folder from one server to another à scp filename  server name or IP:/path/
  scp  -r foldername server name or IP:/path/
 # Kill any process   
@@ -112,20 +109,8 @@
  ps  -ef  
 # display all the processes and how much memory, cpu time, user, pid à 
  top
-# script for search files have .mxf and .xml with same mat id:
-         for entry in "."/*.xml
-         do
-        #echo $entry
-         name=$(echo "${entry%.*}")
-         #echo $name
-          if [ -f "$name.mxf" ];then
-             echo "done: $entry"
-                    	ls -ltrh $name.mxf
-          fi
-         done
-
 #-------------------------------------------------------------------------------------------------------------------------------
-dig url +trace
+ dig url +trace
 #-------------------------------------------------------------------------------------------------------------------------------
 # Type 'screen -S {name}' where 'name' is any name you want to give your screen session
 # Then you're in the screen session, which looks like nothing has changed practically
