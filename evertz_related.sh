@@ -17,6 +17,8 @@
  vi /usr/ort/bin/config/1/stream.xml
 # checking the version of the ORT  
  cat /version
+# search id number inside turbine folder 
+ zgrep -e 158020783 *
 # delete the java version 
  sudo apt-get remove oracle-java8-installer
 #----------------------------------------------------------------------------------------------------------------------------
