@@ -1,4 +1,6 @@
 #!/bin/bash
+# or
+#!/bin/sh
 # finding the 20 files which are having max size  
  find / -xdev -type f -size +100000c -exec ls -la {} \; 2>/dev/null | sort -nk5 | tail -20
 # Delete files and folder which are older than 5 days
@@ -50,6 +52,7 @@
  grep -r udp
 # Find any word in unknown file 
  find . -name "*.txt" -exec grep -i "any word" {} \;
+ time find / -name core 
 -----------------------------------------------------------------------------------------------------------------------------
 # check the RAM  or free space
  cat /proc/meminfo
@@ -118,3 +121,148 @@
 # Press Ctrl A + D to get out of the session (detaches it)
 # Type 'screen -ls' to see all active screen sessions (should see your one after you've made it)
 # Then type 'screen -r {name}' to reattach the screen session
+
+#------------------------------------------------
+echo myvar is $myvar
+export var2="var2 value" 
+# will make this variable as environment variable
+# or we can use declare -x mynewvar
+
+a=1
+(
+a=2
+)
+echo $a
+#prints 1
+
+a=1
+{
+a=2
+}
+echo $a
+#prints 2
+
+ 
+# show built in commands
+enable
+# shows keyword
+compgen -k 
+
+.bashrc
+.bash_profile
+
+# exported variable got copy to the new shell
+# interpret the command inside the source script
+source example.sh  or . example.sh 
+
+alias ll="ls -l"
+
+chmod +x file.sh
+chmod 755 file.sh
+
+echo 'sample output' >&2
+#------------------------------------
+typeset -i x
+declare -i y
+#-----------------------------
+while ((x<10))
+	
+do 
+	echo loop $x; date > data.$x
+	((x=x+1))
+done
+#------------------------------------
+while 
+read a b
+do 
+echo a is $a b is $b
+done
+#---------------------------------------
+ls -l | while 
+	read a b c d 
+do
+echo owner is $c
+done
+#---------------------------------------------
+for <var> in <list>
+do
+command
+done
+#-------------------------------------
+for i in dog cat elephant 
+do 
+echo $i
+done
+#-------------------------------
+seq 1 5 
+for num in `seq 1 5`
+do 
+echo $num
+done
+#--------------------------------
+{A..Z}
+{1..10}
+
+for d in $(<data_file)
+
+for j in *.c
+
+for f in  $(find . -name *.c)
+
+: 'dsjfjds
+dsjfnjnf
+sfjsndfke
+'
+# this is also comment
+0-> stdin, 1-> stdout, 2-> stderr
+
+command &> file 
+
+command | command2
+
+command 2>&1 | command2
+
+command |& command2
+
+command >> file
+command &>> file
+#----------------------
+sort <<END
+cherry
+bana
+app
+END
+#-------------------------
+exec N< myfile
+exec N> myfile
+exec N<> myfile
+exec N>&- or exec N<&-
+exec 7>/tmp/myfile7
+lsof -p $$
+#-----------------------------------
+case expression in 
+	pattern 1 )
+	command list;;
+	pattern 2 )
+	command list ;;
+esac
+#---------------------------------------
+case $ans in 
+	yes|YES|y|Y|y.x ) echo "will do !";;
+	n*|N*) echo "will NOT do!";;
+	*) echo "Oops!";;
+	esac
+#-------------------------------------
+if 
+command list #last result is used 
+then 
+command list
+else 
+command list
+fi
+#----------------------------------------------	
+awk '{print}' emp.txt
+
+awk '/manager/ {print}' emp.txt
+awk '{print $1,$4}' emp.txt
+
