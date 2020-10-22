@@ -3,6 +3,10 @@
 # or
 #!/bin/sh
 #----------------------------------------------------
+lsattr # shows file attributes 
+chattr +i filename # using this command, no one can delete this file, for delete you need to change attribute first
+chattr +a filename # using this command, can only append this file not overwrite
+#----------------------------------------------------
 tar cvzf data_backup.tar.gz . # compress all the files present in current folder
 tar cvzf data_backup.tar.gz --exclude=text.txt . # compress all the files present in current folder exclude test.txt file
 tar cvf data_backup.tar .
@@ -135,6 +139,8 @@ du -sch /home/evertz/*  | sort -h # show all sub folders size with sorted format
  kill -9 processId
 # search the process by its name      	
  ps  -aux | grep process name
+ ps aux | grep java | grep -v grep # search java process and remove grep from the result
+  ps aux | grep java | grep -v grep | wc -l # number of process count 
 # For display all the processes
  ps  -ef  
 # display all the processes and how much memory, cpu time, user, pid à 
