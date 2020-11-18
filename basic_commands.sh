@@ -45,5 +45,6 @@ paste #
 sed # used for modifying the files
 awk # find and replaces text
 diff # identify the deferences between 2 files
-more # 
+more # to view content of a file and navigate through file
+less # to view content of a file and navigate through file, less is faster because it didn't load whole file at once
 

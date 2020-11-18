@@ -1,7 +1,7 @@
 # Do not run this sh file this for keeping the commands for learning purpose
-#!/bin/bash
+#!/bin/bash # shebang line
 # or
-#!/bin/sh
+#!/bin/sh # shebang line
 #----------------------------------------------------
 lsattr # shows file attributes 
 chattr +i filename # using this command, no one can delete this file, for delete you need to change attribute first
@@ -148,12 +148,13 @@ du -sch /home/evertz/*  | sort -h # show all sub folders size with sorted format
 #-------------------------------------------------------------------------------------------------------------------------------
  dig url +trace
 #-------------------------------------------------------------------------------------------------------------------------------
-# Type 'screen -S {name}' where 'name' is any name you want to give your screen session
+ screen -S {name} # where 'name' is any name you want to give your screen session
 # Then you're in the screen session, which looks like nothing has changed practically
 # Then type the command in like you normally would.
 # Press Ctrl A + D to get out of the session (detaches it)
-# Type 'screen -ls' to see all active screen sessions (should see your one after you've made it)
+screen -ls # to see all active screen sessions (should see your one after you've made it)
 # Then type 'screen -r {name}' to reattach the screen session
+screen -X -S {name} kill # kill the screen session
 
 #------------------------------------------------
 echo myvar is $myvar
@@ -295,7 +296,5 @@ command list
 fi
 #----------------------------------------------	
 awk '{print}' emp.txt
-
 awk '/manager/ {print}' emp.txt
 awk '{print $1,$4}' emp.txt
-
