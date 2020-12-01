@@ -1,6 +1,5 @@
 #!/bin/bash
-curl # tool for transferring data using various network protocols
-nslookup # The domain name you want to look up
+curl # tool for transferring data using various network protocols, and for download content using url curl -o address
 apt-get install # package management
 yum # package management
 find # for search file in system
@@ -47,4 +46,18 @@ awk # find and replaces text
 diff # identify the deferences between 2 files
 more # to view content of a file and navigate through file
 less # to view content of a file and navigate through file, less is faster because it didn't load whole file at once
-
+host google.com # will show the ip address of the url
+nslookup google.com # will show the url details
+dig google.com # Tests DNS workings. A good replacement for host and nslookup
+ifconfig # to check ip details of network of server
+ip # to check network details of server, ip addr, ip route, ip route show
+route -n # shows the routing table of the server
+traceroute google.com # To print the route taken by the packet to reach the network host
+ethtool # queries network interfaces and can also set various parameters such as speed
+netstat # Displays all active connections and routing tables. Useful for monitoring performance and troubleshooting
+nmap # Scans open ports on a network. Important for security analysis
+tcpdump # Dumps network traffic for analysis
+iptraf # Monitors network traffic in text mode
+mtr #Combines functionality of ping and traceroute and gives a continuously updated display
+lynx, elinks, w3m # NON graphical browsers for linux  
+ftp, sftp, ncftp, yafc(yet another FTP client) # FTP clients enable you to transfer files with remote computers using the FTP protocol
