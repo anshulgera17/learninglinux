@@ -13,7 +13,7 @@
 - gzip data_backup.tar # give output as
 
 - Inside .tar file you can see how files are their 
-tar -tvf file.tar
+`tar -tvf file.tar`
 
 Search inside .tar test file
  tar -tvf file.tar | grep test
