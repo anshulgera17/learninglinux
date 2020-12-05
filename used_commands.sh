@@ -128,6 +128,7 @@ du -sch /home/evertz/*  | sort -h # show all sub folders size with sorted format
  less filename
 # checking the free space 
  df -h
+ df -hT # will show disk type as well
 # show the list of files according to size  
  ls –ltrhS
 # TOP 10 Files which are having max size in whole system 
