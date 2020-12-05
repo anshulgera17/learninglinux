@@ -7,7 +7,7 @@ top, htop # check process status
 netstat # displays network connections for Transmission Control Protocol, routing tables, and a number of network interface and network protocol statistics
 ls   # list all directory and files
 cd folder_name  # change directory
-cd.. # p1 level in directory
+cd .. # p1 level in directory
 pwd  # print working directory
 cp   # copy
 rm   # remove or delete a file
