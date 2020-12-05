@@ -1,130 +1,112 @@
 # keeping the commands for learning purpose
 
--  `#!/bin/bash` : shebang line
+-  `#!/bin/bash`  shebang line
  	or
--  `#!/bin/sh` : shebang line
+-  `#!/bin/sh`  shebang line
 
-- `lsattr` : shows file attributes 
-- `chattr +i filename` : using this command, no one can delete this file, for delete you need to change attribute first
-- `chattr +a filename` : using this command, can only append this file not overwrite
-- `tar cvzf data_backup.tar.gz .` :  compress all the files present in current folder
-- `tar cvzf data_backup.tar.gz --exclude=text.txt .` : compress all the files present in current folder exclude test.txt file
+- `lsattr`  shows file attributes 
+- `chattr +i filename` using this command, no one can delete this file, for delete you need to change attribute first
+- `chattr +a filename` using this command, can only append this file not overwrite
+- `tar cvzf data_backup.tar.gz .` compress all the files present in current folder
+- `tar cvzf data_backup.tar.gz --exclude=text.txt .` compress all the files present in current folder exclude test.txt file
 - `tar cvf data_backup.tar .`
-- `gzip data_backup.tar`  give output as
+- `gzip data_backup.tar` give output as
 -  Inside .tar file you can see how files are their 
 - `tar -tvf file.tar`
 - Search inside .tar test file `tar -tvf file.tar | grep test`
+- unzip files `tar zxvf filename.tar.gz` 
 
-unzip files 
-tar zxvf filename.tar.gz 
-------------------------------------------------------------------------------
-sed 's/s/S/g' filename > another_file  # all small s make capital S in the file
-sed 's/"//g' filename > another_file # all remove all double quotes 
-sed 's/$/,/g' filename > another_file # add coma at end of the each line
----------------------------------------------------------------------------------
-du -sch folder_name # check directory size 
-du -sch /etc # example 
-du -sch /home/evertz/*  | sort -h # show all sub folders size with sorted format
+- sed `'s/s/S/g' filename > another_file` all small s make capital S in the file
+- sed `'s/"//g' filename > another_file` all remove all double quotes 
+- sed `'s/$/,/g' filename > another_file` add coma at end of the each line
 
-finding the 20 files which are having max size  
- find / -xdev -type f -size +100000c -exec ls -la {} \; 2>/dev/null | sort -nk5 | tail -20
+- `du -sch folder_name` check directory size 
+- `du -sch /etc` example 
+- `du -sch /home/evertz/*  | sort -h` show all sub folders size with sorted format
 
-Delete files and folder which are older than 5 days
- find /path/to/directory/ -mindepth 1 -mtime +5 -delete
+- finding the 20 files which are having max size  
+`find / -xdev -type f -size +100000c -exec ls -la {} \; 2>/dev/null | sort -nk5 | tail -20`
 
-find use case
- find /etc -not -iname "*.conf" # find files in etc directory not with .conf and ignore case also
- find /usr/bin -size +2M # find files which are more than 2MB in /usr/bin directory
- find /home/evertz/anshul/ -name "*.txt" -exec chmod 700 {} \; # find .txt file and then modify their permission using chmod 
+- Delete files and folder which are older than 5 days `find /path/to/directory/ -mindepth 1 -mtime +5 -delete`
 
-for find file in the system you can use locate command also
- locate filename
+- find use case
+ `find /etc -not -iname "*.conf"` find files in etc directory not with .conf and ignore case also
+ `find /usr/bin -size +2M` find files which are more than 2MB in /usr/bin directory
+ `find /home/evertz/anshul/ -name "*.txt" -exec chmod 700 {} \;` find .txt file and then modify their permission using chmod 
+- for find file in the system you can use locate command also `locate filename`
+- check last rebootsalt `last reboot`
+- find the file name in server `locate -e filename`
 
-check last rebootsalt
- last reboot
+- `ftp hostname`
+	or
+- `ftp://username:password@hostname`
+- Now, once connected the 5 most common options are:
+ `cd foldername`      e.g. cd /downloads/recent
+ `get filename`       e.g. get thisisthefileiwant.text
+ `put filename`       e.g. put sendthistotheserver.txt
+ `mget filenameregex` e.g mget * to get every file in a directory
+ `mput filemameregex` e.g. mput *.txt to upload every txt file to the server
 
-find the file name in server
- locate -e filename
---------------------------------------------------------------------------------------------------------------------------------
- ftp hostname
-  or
- ftp://username:password@hostname
+- Command for set the timezone in ec2 instance `sudo dpkg-reconfigure tzdata` 
+- Create the logical volume and add to the existing logical volume in ubuntu EC2 instance.
+ `lsblk`
+ `vgdisplay`
 
-Now, once connected the 5 most common options are:
- cd foldername      #e.g. cd /downloads/recent
- get filename       #e.g. get thisisthefileiwant.text
- put filename       #e.g. put sendthistotheserver.txt
- mget filenameregex #e.g mget * to get every file in a directory
- mput filemameregex #e.g. mput *.txt to upload every txt file to the server
+- created instance LVM-Testing
+- and create 3 volumes (volume1 + volume2 + volume3 ) + 1 volume( volume4)
+- add first 3 volumes in 1 logical volume name volumeall
+ `lsblk`
 
-Command for set the timezone in ec2 instance
- sudo dpkg-reconfigure tzdata 
+- check the name of the attached volume then 
+ `sudo pvcreate /dev/xvdf /dev/xvdg /dev/xvdh` 
 
-Create the logical volume and add to the existing logical volume in ubuntu EC2 instance.
- lsblk
- vgdisplay
+- 3 volumes attached to this instance
+ `sudo pvdisplay`
+ `sudo vgcreate volumeall /dev/xvdf /dev/xvdg /dev/xvdh`
+ `sudo vgextend volumeall /dev/xvdj`
+ `sudo vgdisplay`
 
-created instance LVM-Testing
-and create 3 volumes (volume1 + volume2 + volume3 ) + 1 volume( volume4)
-add first 3 volumes in 1 logical volume name volumeall
- lsblk
+- shows volume group size
+ `sudo pvcreate /dev/xvdi`
 
-check the name of the attached volume then 
- sudo pvcreate /dev/xvdf /dev/xvdg /dev/xvdh 
+- Need to create logical volume and the extend logical volume 
+ `sudo lvcreate -nfedora64-1 -L8G volumeall`
+ `sudo lvextend -L +20G   /dev/precise-build`
+ `sudo resize2fs /dev/precise-build/root`
+ `sudo mkfs.ext3 /dev/volumeall/fedora64-1`
 
-3 volumes attached to this instance
- sudo pvdisplay
- sudo vgcreate volumeall /dev/xvdf /dev/xvdg /dev/xvdh
- sudo vgextend volumeall /dev/xvdj
- sudo vgdisplay 
+- Use chkconfig command for make service as startup service `sudo chkconfig httpd on` 
 
-shows volume group size
- sudo pvcreate /dev/xvdi
+- Find authorized keys `cd ~/.ssh/`
 
-Need to create logical volume and the extend logical volume 
- sudo lvcreate -nfedora64-1 -L8G volumeall
- sudo lvextend -L +20G   /dev/precise-build
- sudo resize2fs /dev/precise-build/root
- sudo mkfs.ext3 /dev/volumeall/fedora64-1
+- tcp dump in network `tcpdump -i lo`
+- `grep -r udp`
 
-Use chkconfig command for make service as startup service 
- sudo chkconfig httpd on 
+- Find any word in unknown file 
+ `find . -name "*.txt" -exec grep -i "any word" {} \;`
+ `time find / -name core` 
 
-Find authorized keys 
- cd ~/.ssh/
+- check the RAM  or free space
+ `cat /proc/meminfo`
+ `vmstat -s `
+ `htop`
+ `free -m`
 
-tcp dump in network
- tcpdump -i lo 
------------------------------------------------------------------------------------------------------------------
- grep -r udp
+- For SDI output
+ `cd /proc/evod/ cat hwstat`
 
-Find any word in unknown file 
- find . -name "*.txt" -exec grep -i "any word" {} \;
- time find / -name core 
------------------------------------------------------------------------------------------------------------------------------
+ `whereis command_name`
 
-check the RAM  or free space
- cat /proc/meminfo
- vmstat -s 
- htop
- free -m
+- check the port data transmission and configuration for ptpd
+ `sudo ethtool eth4`
 
-For SDI output
- cd /proc/evod/ cat hwstat
------------------------------------------------------------------------------------------------------------------------------
- whereis command_name 
-
-check the port data transmission and configuration for ptpd
- sudo ethtool eth4
------------------------------------------------------------------------------------------------------------------------------
-
-Database commands
- mysql  –u MEDDBA –p
- Masterkey
- show databases;
- use mysql;
- show tables;
- describe tablename;
+- Database commands
+ `mysql  –u MEDDBA –p`
+ `Masterkey`
+ `show databases;`
+ `use mysql;`
+ `show tables;`
+ `describe tablename;`
 
 Check the system level logs
  /var/log/dmesg
