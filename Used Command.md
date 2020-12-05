@@ -15,9 +15,9 @@
 - Search inside .tar test file `tar -tvf file.tar | grep test`
 - unzip files `tar zxvf filename.tar.gz` 
 
-- sed `'s/s/S/g' filename > another_file` all small s make capital S in the file
-- sed `'s/"//g' filename > another_file` all remove all double quotes 
-- sed `'s/$/,/g' filename > another_file` add coma at end of the each line
+- `sed 's/s/S/g' filename > another_file` all small s make capital S in the file
+- `sed 's/"//g' filename > another_file` all remove all double quotes 
+- `sed 's/$/,/g' filename > another_file` add coma at end of the each line
 
 - `du -sch folder_name` check directory size 
 - `du -sch /etc` example 
