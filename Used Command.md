@@ -141,7 +141,7 @@
 - Display all the processes and how much memory, cpu time, user, pid à `top`
 
 - `dig url +trace`
--------------------------------------------------------------------------------------------------------------------------------
+
 - screen -S {name} # where 'name' is any name you want to give your screen session
 - Then you're in the screen session, which looks like nothing has changed practically
 - Then type the command in like you normally would.
@@ -156,21 +156,26 @@
 - or we can use `declare -x mynewvar`
 
 
+```
 a=1
 (
 a=2
 )
 echo $a
 #prints 1
+```
 
+```
 a=1
 {
 a=2
 }
 echo $a
 #prints 2
+```
 
  
+```
 show built in commands
 enable
 
@@ -179,17 +184,20 @@ compgen -k
 
 .bashrc
 .bash_profile
+```
 
-exported variable got copy to the new shell
-interpret the command inside the source script
-source example.sh  or . example.sh 
+- interpret the command inside the source script
+- `source example.sh  or . example.sh `
 
-alias ll="ls -l"
+- `alias ll="ls -l"`
 
+```
 chmod +x file.sh
 chmod 755 file.sh
 
 echo 'sample output' >&2
+```
+
 ```
 typeset -i x
 declare -i y
