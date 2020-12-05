@@ -11,8 +11,7 @@
 - `tar cvzf data_backup.tar.gz --exclude=text.txt .` compress all the files present in current folder exclude test.txt file
 - `tar cvf data_backup.tar .`
 - `gzip data_backup.tar` give output as
--  Inside .tar file you can see how files are their 
-- `tar -tvf file.tar`
+- Inside .tar file you can see how files are their `tar -tvf file.tar`
 - Search inside .tar test file `tar -tvf file.tar | grep test`
 - unzip files `tar zxvf filename.tar.gz` 
 
@@ -24,12 +23,12 @@
 - `du -sch /etc` example 
 - `du -sch /home/evertz/*  | sort -h` show all sub folders size with sorted format
 
-- finding the 20 files which are having max size  
+#### finding the 20 files which are having max size  
 `find / -xdev -type f -size +100000c -exec ls -la {} \; 2>/dev/null | sort -nk5 | tail -20`
 
 - Delete files and folder which are older than 5 days `find /path/to/directory/ -mindepth 1 -mtime +5 -delete`
 
-- find use case
+#### find use case
 - `find /etc -not -iname "*.conf"` find files in etc directory not with .conf and ignore case also
 - `find /usr/bin -size +2M` find files which are more than 2MB in /usr/bin directory
 - `find /home/evertz/anshul/ -name "*.txt" -exec chmod 700 {} \;` find .txt file and then modify their permission using chmod 
@@ -50,28 +49,27 @@
 - Command for set the timezone in ec2 instance `sudo dpkg-reconfigure tzdata` 
 - Create the logical volume and add to the existing logical volume in ubuntu EC2 instance. `lsblk`, `vgdisplay`
 
-- created instance LVM-Testing
+#### created instance LVM-Testing
 - and create 3 volumes (volume1 + volume2 + volume3 ) + 1 volume( volume4)
-- add first 3 volumes in 1 logical volume name volumeall
- `lsblk`
+- add first 3 volumes in 1 logical volume name volumeall `lsblk`
 
-- check the name of the attached volume then 
- `sudo pvcreate /dev/xvdf /dev/xvdg /dev/xvdh` 
+#### check the name of the attached volume then 
+- `sudo pvcreate /dev/xvdf /dev/xvdg /dev/xvdh` 
 
-- 3 volumes attached to this instance
- `sudo pvdisplay`
- `sudo vgcreate volumeall /dev/xvdf /dev/xvdg /dev/xvdh`
- `sudo vgextend volumeall /dev/xvdj`
- `sudo vgdisplay`
+#### 3 volumes attached to this instance
+- `sudo pvdisplay`
+- `sudo vgcreate volumeall /dev/xvdf /dev/xvdg /dev/xvdh`
+- `sudo vgextend volumeall /dev/xvdj`
+- `sudo vgdisplay`
 
-- shows volume group size
- `sudo pvcreate /dev/xvdi`
+#### shows volume group size
+- `sudo pvcreate /dev/xvdi`
 
-- Need to create logical volume and the extend logical volume 
- `sudo lvcreate -nfedora64-1 -L8G volumeall`
- `sudo lvextend -L +20G   /dev/precise-build`
- `sudo resize2fs /dev/precise-build/root`
- `sudo mkfs.ext3 /dev/volumeall/fedora64-1`
+#### Need to create logical volume and the extend logical volume 
+- `sudo lvcreate -nfedora64-1 -L8G volumeall`
+- `sudo lvextend -L +20G   /dev/precise-build`
+- `sudo resize2fs /dev/precise-build/root`
+- `sudo mkfs.ext3 /dev/volumeall/fedora64-1`
 
 - Use chkconfig command for make service as startup service `sudo chkconfig httpd on` 
 
@@ -81,103 +79,82 @@
 - `grep -r udp`
 
 - Find any word in unknown file 
- `find . -name "*.txt" -exec grep -i "any word" {} \;`
- `time find / -name core` 
+- `find . -name "*.txt" -exec grep -i "any word" {} \;`
+- `time find / -name core` 
 
-- check the RAM  or free space
- `cat /proc/meminfo`
- `vmstat -s `
- `htop`
- `free -m`
+#### check the RAM  or free space
+- `cat /proc/meminfo`
+- `vmstat -s `
+- `htop`
+- `free -m`
 
-- For SDI output
- `cd /proc/evod/ cat hwstat`
+- For SDI output `cd /proc/evod/ cat hwstat`
 
- `whereis command_name`
+- `whereis command_name`
 
-- check the port data transmission and configuration for ptpd
- `sudo ethtool eth4`
+- check the port data transmission and configuration for ptpd `sudo ethtool eth4`
 
-- Database commands
- `mysql  –u MEDDBA –p`
- `Masterkey`
- `show databases;`
- `use mysql;`
- `show tables;`
- `describe tablename;`
+#### Database commands
+-  `mysql  –u MEDDBA –p`
+-  `Masterkey`
+-  `show databases;`
+-  `use mysql;`
+-  `show tables;`
+-  `describe tablename;`
 
-Check the system level logs
- /var/log/dmesg
- /var/log/kern.log
- /var/log/syslog
+#### Check the system level logs
+- `/var/log/dmesg`
+- `/var/log/kern.log`
+- `/var/log/syslog`
 
-Convert url to ip address
- % dig +short stackoverflow.com
+- Convert url to ip address `% dig +short stackoverflow.com`
+- check the port is active or not   `netstat -tuplen`
+- for routing table `netstat -r`   
 
-check the port is active or not   
- netstat -tuplen
+- `Pssh` for run a command in multiple server
+- `Pscp` for copy file in multiple servers
+- `Prsync` for efficient copy
+- `Pnuke`  for killing processes in multiple servers
+- `Pslurp`
 
-for routing table
- netstat -r   
-----------------------------------------------------------------------------------------------------------------------------
- Pssh : for run a command in multiple server
- Pscp : for copy file in multiple servers
- Prsync : for efficient copy
- Pnuke : for killing processes in multiple servers
- Pslurp
+- search and replace  `sed -i -e 's/.xml//g' /tmp/foo.txt`
+- check the OS version `cat /etc/os-release` 
+- open the log files  `less filename`
+- checking the free space `df -h`, `df -hT` will show disk type as well
+- show the list of files according to size  `ls –ltrhS`
 
-for search and replace  
- sed -i -e 's/.xml//g' /tmp/foo.txt 
+- TOP 10 Files which are having max size in whole system 
+- `du  -a  / | sort  -n  -r | head  -n 10 `
+- `find / -size +1G -size -3G 2>> /dev/null`
 
-For check the OS version 
- cat /etc/os-release
+- copy files or folder from one server to another à scp filename  server name or IP:/path/
+- `scp  -r foldername server name or IP:/path/`
 
-For open the log files  
- less filename
+- Kill any process `kill -9 processId`
+- Search the process by its name      	
+- `ps  -aux | grep process name`
+- `ps aux | grep java | grep -v grep`  search java process and remove grep from the result
+- `ps aux | grep java | grep -v grep | wc -l` number of process count 
 
-checking the free space 
- df -h
- df -hT # will show disk type as well
+- For display all the processes `ps  -ef`  
 
-show the list of files according to size  
- ls –ltrhS
+- Display all the processes and how much memory, cpu time, user, pid à `top`
 
-TOP 10 Files which are having max size in whole system 
- du  -a  / | sort  -n  -r | head  -n 10 
- find / -size +1G -size -3G 2>> /dev/null
-
-copy files or folder from one server to another à scp filename  server name or IP:/path/
- scp  -r foldername server name or IP:/path/
-
-Kill any process   
- kill -9 processId
-
-search the process by its name      	
- ps  -aux | grep process name
- ps aux | grep java | grep -v grep # search java process and remove grep from the result
-  ps aux | grep java | grep -v grep | wc -l # number of process count 
-
-For display all the processes
- ps  -ef  
-
-display all the processes and how much memory, cpu time, user, pid à 
- top
+-`dig url +trace`
 -------------------------------------------------------------------------------------------------------------------------------
- dig url +trace
--------------------------------------------------------------------------------------------------------------------------------
-screen -S {name} # where 'name' is any name you want to give your screen session
-Then you're in the screen session, which looks like nothing has changed practically
-Then type the command in like you normally would.
-Press Ctrl A + D to get out of the session (detaches it)
-screen -ls # to see all active screen sessions (should see your one after you've made it)
-Then type 'screen -r {name}' to reattach the screen session
-screen -X -S {name} kill # kill the screen session
-------------------------------------------------
+- screen -S {name} # where 'name' is any name you want to give your screen session
+- Then you're in the screen session, which looks like nothing has changed practically
+- Then type the command in like you normally would.
+- Press Ctrl A + D to get out of the session (detaches it)
+- screen -ls # to see all active screen sessions (should see your one after you've made it)
+- Then type 'screen -r {name}' to reattach the screen session
+- screen -X -S {name} kill # kill the screen session
 
-echo myvar is $myvar
-export var2="var2 value" 
-will make this variable as environment variable
-or we can use declare -x mynewvar
+- `echo myvar is $myvar`
+- `export var2="var2 value"` 
+- will make this variable as environment variable
+- or we can use `declare -x mynewvar`
+
 
 a=1
 (
