@@ -1,9 +1,9 @@
 # keeping the commands for learning purpose
 
-#!/bin/bash # shebang line
- or
-#!/bin/sh # shebang line
-----------------------------------------------------
+ #!/bin/bash # shebang line
+ 	or
+ #!/bin/sh # shebang line
+---
 lsattr # shows file attributes 
 chattr +i filename # using this command, no one can delete this file, for delete you need to change attribute first
 chattr +a filename # using this command, can only append this file not overwrite
