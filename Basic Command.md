@@ -1,5 +1,5 @@
 - `curl` tool for transferring data using various network protocols, and for download content using url curl -o address
-- `apt-get` package management , `apt-get install `, `apt-get update `, `apt-get delete ` 
+- `apt-get` package management `apt-get install `, `apt-get update `, `apt-get delete ` 
 - `yum` package management
 - `find` for search file in system
 - `top`, `htop` check process status

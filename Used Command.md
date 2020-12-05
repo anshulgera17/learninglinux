@@ -283,6 +283,7 @@ case $ans in
 	*) echo "Oops!";;
 esac
 -------------------------------------
+```
 if 
 command list #last result is used 
 then 
@@ -290,7 +291,10 @@ command list
 else 
 command list
 fi
-----------------------------------------------	
+```
+
+```
 awk '{print}' emp.txt
 awk '/manager/ {print}' emp.txt
-awk '{print $1,$4}' emp.txt
+awk '{print $1,$4}' emp.txt`
+```
