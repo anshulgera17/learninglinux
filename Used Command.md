@@ -40,7 +40,7 @@
 - `ftp hostname`
 	or
 - `ftp://username:password@hostname`
-### Now, once connected the 5 most common options are:
+#### Now, once connected the 5 most common options are:
 -  `cd foldername`      e.g. cd /downloads/recent
 -  `get filename`       e.g. get thisisthefileiwant.text
 -  `put filename`       e.g. put sendthistotheserver.txt
