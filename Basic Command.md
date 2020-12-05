@@ -1,4 +1,3 @@
-#!/bin/bash
 curl : tool for transferring data using various network protocols, and for download content using url curl -o address
 apt-get : package management , apt-get install, update, delete 
 yum : package management
@@ -17,7 +16,7 @@ rmdir : remove directory
 touch : create new file in linux
 head file_name : print first 10 lines of the file
 history : print recently used commands
-cat : concatenate files and print on the standard output
+cat  : concatenate files and print on the standard output
 echo : display a line of text
 grep : print lines matching a pattern
 examples of grep : grep -r 'string', egrep, zgrep -e
