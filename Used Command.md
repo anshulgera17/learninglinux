@@ -190,45 +190,58 @@ chmod +x file.sh
 chmod 755 file.sh
 
 echo 'sample output' >&2
-------------------------------------
+```
 typeset -i x
 declare -i y
------------------------------
-while ((x<10))
-	
+```
+
+```
+while ((x<10))	
 do 
 	echo loop $x; date > data.$x
 	((x=x+1))
 done
-------------------------------------
+```
+
+```
 while 
 read a b
 do 
 echo a is $a b is $b
 done
----------------------------------------
+```
+
+```
 ls -l | while 
 	read a b c d 
 do
 echo owner is $c
 done
----------------------------------------------
+```
+
+```
 for <var> in <list>
 do
 command
 done
--------------------------------------
+```
+
+```
 for i in dog cat elephant 
 do 
 echo $i
 done
--------------------------------
+```
+
+```
 seq 1 5 
 for num in `seq 1 5`
 do 
 echo $num
 done
---------------------------------
+```
+
+```
 {A..Z}
 {1..10}
 
@@ -237,7 +250,9 @@ for d in $(<data_file)
 for j in *.c
 
 for f in  $(find . -name *.c)
+```
 
+```
 : 'dsjfjds
 dsjfnjnf
 sfjsndfke
@@ -245,7 +260,9 @@ sfjsndfke
 
 this is also comment
 0-> stdin, 1-> stdout, 2-> stderr
+```
 
+```
 command &> file 
 
 command | command2
@@ -256,33 +273,43 @@ command |& command2
 
 command >> file
 command &>> file
----------------------
+```
+
+```
 sort <<END
 cherry
 bana
 app
 END
--------------------------
+```
+
+```
 exec N< myfile
 exec N> myfile
 exec N<> myfile
 exec N>&- or exec N<&-
 exec 7>/tmp/myfile7
 lsof -p $$
------------------------------------
+```
+
+
+```
 case expression in 
 	pattern 1 )
 	command list;;
 	pattern 2 )
 	command list ;;
 esac
----------------------------------------
+```
+
+```
 case $ans in 
 	yes|YES|y|Y|y.x ) echo "will do !";;
 	n*|N*) echo "will NOT do!";;
 	*) echo "Oops!";;
 esac
--------------------------------------
+```
+
 ```
 if 
 command list #last result is used 
