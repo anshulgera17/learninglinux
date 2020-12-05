@@ -30,9 +30,9 @@
 - Delete files and folder which are older than 5 days `find /path/to/directory/ -mindepth 1 -mtime +5 -delete`
 
 - find use case
- `find /etc -not -iname "*.conf"` find files in etc directory not with .conf and ignore case also
- `find /usr/bin -size +2M` find files which are more than 2MB in /usr/bin directory
- `find /home/evertz/anshul/ -name "*.txt" -exec chmod 700 {} \;` find .txt file and then modify their permission using chmod 
+- `find /etc -not -iname "*.conf"` find files in etc directory not with .conf and ignore case also
+- `find /usr/bin -size +2M` find files which are more than 2MB in /usr/bin directory
+- `find /home/evertz/anshul/ -name "*.txt" -exec chmod 700 {} \;` find .txt file and then modify their permission using chmod 
 - for find file in the system you can use locate command also `locate filename`
 - check last rebootsalt `last reboot`
 - find the file name in server `locate -e filename`
@@ -41,16 +41,14 @@
 	or
 - `ftp://username:password@hostname`
 - Now, once connected the 5 most common options are:
- `cd foldername`      e.g. cd /downloads/recent
- `get filename`       e.g. get thisisthefileiwant.text
- `put filename`       e.g. put sendthistotheserver.txt
- `mget filenameregex` e.g mget * to get every file in a directory
- `mput filemameregex` e.g. mput *.txt to upload every txt file to the server
+-  `cd foldername`      e.g. cd /downloads/recent
+-  `get filename`       e.g. get thisisthefileiwant.text
+-  `put filename`       e.g. put sendthistotheserver.txt
+-  `mget filenameregex` e.g mget * to get every file in a directory
+-  `mput filemameregex` e.g. mput *.txt to upload every txt file to the server
 
 - Command for set the timezone in ec2 instance `sudo dpkg-reconfigure tzdata` 
-- Create the logical volume and add to the existing logical volume in ubuntu EC2 instance.
- `lsblk`
- `vgdisplay`
+- Create the logical volume and add to the existing logical volume in ubuntu EC2 instance. `lsblk`, `vgdisplay`
 
 - created instance LVM-Testing
 - and create 3 volumes (volume1 + volume2 + volume3 ) + 1 volume( volume4)
