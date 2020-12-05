@@ -140,7 +140,7 @@
 
 - Display all the processes and how much memory, cpu time, user, pid à `top`
 
--`dig url +trace`
+- `dig url +trace`
 -------------------------------------------------------------------------------------------------------------------------------
 - screen -S {name} # where 'name' is any name you want to give your screen session
 - Then you're in the screen session, which looks like nothing has changed practically
