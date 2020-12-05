@@ -4,10 +4,10 @@
  	or
 -  #!/bin/sh # shebang line
 
-- lsattr # shows file attributes 
-- chattr +i filename # using this command, no one can delete this file, for delete you need to change attribute first
-- chattr +a filename # using this command, can only append this file not overwrite
-- tar cvzf data_backup.tar.gz . # compress all the files present in current folder
+- lsattr : shows file attributes 
+- ```chattr +i filename```` : using this command, no one can delete this file, for delete you need to change attribute first
+- `chattr +a filename` : using this command, can only append this file not overwrite
+- `tar cvzf data_backup.tar.gz .` :  compress all the files present in current folder
 - tar cvzf data_backup.tar.gz --exclude=text.txt . # compress all the files present in current folder exclude test.txt file
 - tar cvf data_backup.tar .
 - gzip data_backup.tar # give output as
@@ -15,8 +15,7 @@
 - Inside .tar file you can see how files are their 
 `tar -tvf file.tar`
 
-Search inside .tar test file
- tar -tvf file.tar | grep test
+- Search inside .tar test file `tar -tvf file.tar | grep test`
 
 unzip files 
 tar zxvf filename.tar.gz 
