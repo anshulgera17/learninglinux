@@ -1,9 +1,8 @@
-# keeping the commands for learning purpose
+# keeping the commands for learning and practise
 
 -  `#!/bin/bash`  shebang line
  	or
 -  `#!/bin/sh`  shebang line
-
 - `lsattr`  shows file attributes 
 - `chattr +i filename` using this command, no one can delete this file, for delete you need to change attribute first
 - `chattr +a filename` using this command, can only append this file not overwrite
@@ -23,8 +22,8 @@
 - `du -sch /etc` example 
 - `du -sch /home/evertz/*  | sort -h` show all sub folders size with sorted format
 
-#### finding the 20 files which are having max size  
-`find / -xdev -type f -size +100000c -exec ls -la {} \; 2>/dev/null | sort -nk5 | tail -20`
+#### find the 20 files which are having max size  
+- `find / -xdev -type f -size +100000c -exec ls -la {} \; 2>/dev/null | sort -nk5 | tail -20`
 
 - Delete files and folder which are older than 5 days `find /path/to/directory/ -mindepth 1 -mtime +5 -delete`
 
@@ -32,8 +31,9 @@
 - `find /etc -not -iname "*.conf"` find files in etc directory not with .conf and ignore case also
 - `find /usr/bin -size +2M` find files which are more than 2MB in /usr/bin directory
 - `find /home/evertz/anshul/ -name "*.txt" -exec chmod 700 {} \;` find .txt file and then modify their permission using chmod 
+- Find any word in unknown file `find . -name "*.txt" -exec grep -i "any word" {} \;`
 - for find file in the system you can use locate command also `locate filename`
-- check last rebootsalt `last reboot`
+- check last reboot `last reboot`
 - find the file name in server `locate -e filename`
 
 - `ftp hostname`
@@ -50,7 +50,7 @@
 - Create the logical volume and add to the existing logical volume in ubuntu EC2 instance. `lsblk`, `vgdisplay`
 
 #### created instance LVM-Testing
-- and create 3 volumes (volume1 + volume2 + volume3 ) + 1 volume( volume4)
+- create 3 volumes (volume1 + volume2 + volume3 ) + 1 volume( volume4)
 - add first 3 volumes in 1 logical volume name volumeall `lsblk`
 
 #### check the name of the attached volume then 
@@ -60,9 +60,7 @@
 - `sudo pvdisplay`
 - `sudo vgcreate volumeall /dev/xvdf /dev/xvdg /dev/xvdh`
 - `sudo vgextend volumeall /dev/xvdj`
-- `sudo vgdisplay`
-
-#### shows volume group size
+- `sudo vgdisplay` shows volume group size
 - `sudo pvcreate /dev/xvdi`
 
 #### Need to create logical volume and the extend logical volume 
@@ -77,9 +75,6 @@
 
 - tcp dump in network `tcpdump -i lo`
 - `grep -r udp`
-
-- Find any word in unknown file 
-- `find . -name "*.txt" -exec grep -i "any word" {} \;`
 - `time find / -name core` 
 
 #### check the RAM  or free space
@@ -119,7 +114,6 @@
 
 - search and replace  `sed -i -e 's/.xml//g' /tmp/foo.txt`
 - check the OS version `cat /etc/os-release` 
-- open the log files  `less filename`
 - checking the free space `df -h`, `df -hT` will show disk type as well
 - show the list of files according to size  `ls –ltrhS`
 
@@ -127,21 +121,18 @@
 - `du  -a  / | sort  -n  -r | head  -n 10 `
 - `find / -size +1G -size -3G 2>> /dev/null`
 
-- copy files or folder from one server to another à scp filename  server name or IP:/path/
+- copy files or folder from one server to another scp filename  server name or IP:/path/
 - `scp  -r foldername server name or IP:/path/`
-
 - Kill any process `kill -9 processId`
 - Search the process by its name      	
 - `ps  -aux | grep process name`
 - `ps aux | grep java | grep -v grep`  search java process and remove grep from the result
 - `ps aux | grep java | grep -v grep | wc -l` number of process count 
-
 - For display all the processes `ps  -ef`  
-
 - Display all the processes and how much memory, cpu time, user, pid à `top`
 
 - `dig url +trace`
-
+#### Screen command use
 - screen -S {name} # where 'name' is any name you want to give your screen session
 - Then you're in the screen session, which looks like nothing has changed practically
 - Then type the command in like you normally would.
@@ -155,6 +146,8 @@
 - will make this variable as environment variable
 - or we can use `declare -x mynewvar`
 
+- show built in commands `enable`
+- shows keyword `compgen -k`
 
 ```
 a=1
@@ -174,29 +167,9 @@ echo $a
 #prints 2
 ```
 
- 
-```
-show built in commands
-enable
-
-shows keyword
-compgen -k 
-
-.bashrc
-.bash_profile
-```
-
 - interpret the command inside the source script
 - `source example.sh  or . example.sh `
-
 - `alias ll="ls -l"`
-
-```
-chmod +x file.sh
-chmod 755 file.sh
-
-echo 'sample output' >&2
-```
 
 ```
 typeset -i x
@@ -221,7 +194,7 @@ done
 
 ```
 ls -l | while 
-	read a b c d 
+read a b c d 
 do
 echo owner is $c
 done
@@ -265,7 +238,6 @@ for f in  $(find . -name *.c)
 dsjfnjnf
 sfjsndfke
 '
-
 this is also comment
 0-> stdin, 1-> stdout, 2-> stderr
 ```
@@ -320,7 +292,7 @@ esac
 
 ```
 if 
-command list #last result is used 
+command list 
 then 
 command list
 else 

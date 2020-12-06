@@ -1,9 +1,9 @@
-- `curl` tool for transferring data using various network protocols, and for download content using url curl -o address
-- `apt-get` package management `apt-get install `, `apt-get update `, `apt-get delete ` 
+# Basic Commands for learning purpose 
+- `curl` tool for transferring data using various network protocols, and for download content using url `curl -o address`
+- `apt-get` package management `apt-get install package`, `apt-get update package`, `apt-get delete package` 
 - `yum` package management
 - `find` for search file in system
 - `top`, `htop` check process status
-- `netstat` displays network connections for Transmission Control Protocol, routing tables, and a number of network interface and network protocol statistics
 - `ls` list all directory and files
 - `cd folder_name` change directory
 - `cd ..` p1 level in directory
@@ -14,7 +14,7 @@
 - `mkdir` make directory
 - `rmdir` remove directory
 - `touch` create new file in linux
-- `head file_name ` print first 10 lines of the file
+- `head` print first 10 lines of the file
 - `history` print recently used commands
 - `cat` concatenate files and print on the standard output
 - `echo` display a line of text
@@ -25,7 +25,7 @@
 - `tee` tee takes the output from any command, and, while sending it to standard output, it also saves it to a file. `find -name "g*cfs" | tee /tmp/tee_output`
 - `wc` print the number of newlines words and bytes in files
 - `sort` sort lines of text file, `sort filename`, `sort -r filename`, `sort -k 3 filename`, `sort -u filename`  
-- `uniq` uniq removes duplicate consecutive lines in a text file and is useful for simplifying the text display. sort file1 file2 |  uniq > file3, uniq -c filename
+- `uniq` uniq removes duplicate consecutive lines in a text file and is useful for simplifying the text display. `sort file1 file2 |  uniq > file3, uniq -c filename`
 - `chmod` change file access permission
 - `chown` change file owner and group
 - `su`    change user id or become super user
@@ -35,11 +35,11 @@
 - `kill` kill a process
 - `tar` archive a file
 - `zip` package and compress(archive) files
-- `unzip`  list,test and extract compressed files in a zip archive
-- `ssh` ssh client -remote login program
+- `unzip`  list, test and extract compressed files in a zip archive
+- `ssh` ssh client remote login program
 - `scp` secure copy or remote file copy
 - `fdisk` partition manipulator
-- `tail file_name` print last 10 lines of a file.
+- `tail` print last 10 lines of a file.
 - `free` to check the RAM of a server
 - `nproc` number of CPUs in a server.
 - `cut` cut is used for manipulating column-based files and is designed to extract specific columns. `ls -l | cut -d" " -f3`
@@ -53,9 +53,9 @@
 - `less` to view content of a file and navigate through file, less is faster because it didn't load whole file at once
 - `host google.com` will show the ip address of the url
 - `nslookup google.com` will show the url details
-- `dig google.com` Tests DNS workings. A good replacement for host and nslookup
+- `dig google.com` tests DNS workings. A good replacement for host and nslookup
 - `ifconfig` to check ip details of network of server
-- `ip` to check network details of server, ip addr, ip route, ip route show
+- `ip` to check network details of server `ip addr`, `ip route`, `ip route show`
 - `route -n` shows the routing table of the server
 - `traceroute google.com` To print the route taken by the packet to reach the network host
 - `ethtool` queries network interfaces and can also set various parameters such as speed
@@ -72,9 +72,9 @@
 - `zmore somefile.gz` To page through a compressed file
 - `zgrep -i less somefile.gz` To search inside a compressed file
 - `zdiff file1.txt.gz file2.txt.gz` To compare two compressed files
-- `useradd`, `sudo useradd -m -c "Anshul gera" -s /bin/bash anshul`
-- `sudo passwd anshul`
-- `userdel`, `sudo userdel -r anshul`
+- `useradd`, `sudo useradd -m -c "Anshul gera" -s /bin/bash anshul` create user
+- `sudo passwd anshul` add password for user
+- `userdel`, `sudo userdel -r anshul` delete user 
 - `groupadd` :
 - `groupdel` :
 - `env` :
