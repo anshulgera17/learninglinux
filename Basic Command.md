@@ -2,18 +2,19 @@
 - `curl` tool for transferring data using various network protocols, and for download content using url `curl -o address`
 - `apt-get` package management `apt-get install package`, `apt-get update package`, `apt-get delete package` 
 - `yum` package management
-- `find` for search file in system
+- `find` for search file in system `sudo find . -name "*.log"` `find /usr -name gcc` `find /usr -type d -name gcc` `find /usr -type f -name gcc` `find -name "*.swp" -exec rm {} ';' ` 
 - `top`, `htop` check process status
-- `ls` list all directory and files
+- `ls` list all directory and files `ls -l` `ls -la` `ls -ltrh` `ls -ltrhS`
 - `cd folder_name` change directory
 - `cd ..` p1 level in directory
 - `pwd` print working directory
-- `cp`  copy
-- `rm`  remove or delete a file
+- `cp`  copy `cp filename destinationpath` `cp abc.txt /home/user/` `cp /home/user/abc.txt /tmp/new_abc.txt` `cp abc.txt ../../`
+- `rm`  remove or delete a file `rm abc.txt`
 - `mv`  moves a file one name to another or rename
-- `mkdir` make directory
-- `rmdir` remove directory
-- `touch` create new file in linux
+- `mkdir` make directory `mkdir folder/directory name`
+- `rmdir` remove directory 
+- `touch` is often used to set or update the access, change, and modify times of files, however you can also create empty file using touch `touch filename` `touch -t 202012091600 myfile` 09 Dec 2020 16:00 myfile timestamp
+- `tree` display a tree view of the filesystem `tree -d` for directories
 - `head` print first 10 lines of the file
 - `history` print recently used commands
 - `cat` concatenate files and print on the standard output
@@ -81,6 +82,11 @@
 - `set` :
 - `export` :
 - `echo PS1` prints how you are promting the name of host and current working directory \u Username, \h hostname, \w current working dir, \! history number of this command, \d date
+- `sudo systemctl stop gdm` (or `sudo telinit 3`) close the GUI graphical user interface using this command
+- `halt``poweroff` for halt the system
+- `sudo shutdown -h 10:00 "Shutting down for scheduled maintenance."` for restart the server or node `shutdown -r` `reboot`
+- `which diff` locate the program on filesystem
+- `whereis diff` locate packages of the program 
 - History environment variables like HISTFILE, HISTFILESIZE, HISTSIZE, HISTCONTROL, HISTIGNORE
 - CTRL-L	: Clears the screen
 - CTRL-D	: Exits the current shell
