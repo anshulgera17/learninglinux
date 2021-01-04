@@ -2,7 +2,7 @@
 - `curl` tool for transferring data using various network protocols, and for download content using url `curl -o address`
 - `apt-get` package management `apt-get install package`, `apt-get update package`, `apt-get delete package` 
 - `yum` package management
-- `find` for search file in system `sudo find . -name "*.log"` `find /usr -name gcc` `find /usr -type d -name gcc` `find /usr -type f -name gcc` `find -name "*.swp" -exec rm {} ';' ` 
+- `find` for search file in system `sudo find . -name "*.log"` `find /usr -name gcc` `find /usr -type d -name gcc` `find /usr -type f -name gcc` `find -name "*.swp" -exec rm {} ';' ` `find / -ctime 3` -ctime last changed, -atime last accessed, -mtime modified/last written `find / -size 0` `find / -size +10M -exec command {} ’;’`
 - `top`, `htop` check process status
 - `ls` list all directory and files `ls -l` `ls -la` `ls -ltrh` `ls -ltrhS`
 - `cd folder_name` change directory
