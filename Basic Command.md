@@ -1,7 +1,10 @@
 # Basic Commands for learning purpose 
 - `curl` tool for transferring data using various network protocols, and for download content using url `curl -o address`
-- `apt-get` package management `apt-get install package`, `apt-get update package`, `apt-get delete package` 
-- `yum` package management
+- `dpkg` or `rpm` low level package manager, `apt`, `yum`, `zypper` or `dnf` are high level package manager
+- `apt-get` package management,(apt)advanced packaging tool for debian `apt-get install foo`, `apt-get update foo`, `apt-get delete foo` `apt-get autoremove foo` `apt-get dist-upgrade` update entire system `apt-cache search foo` show packages named foo `apt-cache dumpavail foo` show all available packages 
+- `yum` package management for redhat `yum install foo` `yum remove foo` `yum update foo` `yum update` `yum list "foo"` `yum list`
+- `rpm` `rpm -i foo.rpm` `rpm -e foo.rpm` `rpm -U foo.rpm` `rpm -qa` `rpm -qil foo` `rpm -qf file` `rpm -q -whatprovide foo`
+- `dpkg` `dpkg --install foo.deb`  `dpkg --remove foo.deb` `dpkg --list` `dpkg --listfiles foo` `dpkg --search file`
 - `find` for search file in system `sudo find . -name "*.log"` `find /usr -name gcc` `find /usr -type d -name gcc` `find /usr -type f -name gcc` `find -name "*.swp" -exec rm {} ';' ` `find / -ctime 3` -ctime last changed, -atime last accessed, -mtime modified/last written `find / -size 0` `find / -size +10M -exec command {} ’;’`
 - `top`, `htop` check process status
 - `ls` list all directory and files `ls -l` `ls -la` `ls -ltrh` `ls -ltrhS`
