@@ -20,6 +20,7 @@
 - `tree` display a tree view of the filesystem `tree -d` for directories
 - `head` print first 10 lines of the file
 - `history` print recently used commands
+- `man` for searching information about commands `man -k compress` `man -a foo` `man -f foo`
 - `cat` concatenate files and print on the standard output
 - `echo` display a line of text
 - `grep` print lines matching a pattern

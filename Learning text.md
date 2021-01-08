@@ -42,3 +42,16 @@ System.map - Kernel symbol table, only used for debugging.
 Each of these files has a kernel version appended to its name.
 
 The Grand Unified Bootloader (GRUB) files such as /boot/grub/grub.conf or /boot/grub2/grub2.cfg are also found under the /boot directory.
+
+PID - process id
+PPID - parent process id
+TID - thread id
+UID - User Id
+GID - Group Id 
+EUID(Effective ID) - determine the access right of the user
+EGID - determine the access right of the group
+RUID - identified the user who start the process
+RGID(Real Group ID) - identified the group that start the process
+
+nice value of each process decide the priority, -20 (high priority), + 19 (low priority)
+renice +5 pid
