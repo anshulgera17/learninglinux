@@ -55,3 +55,5 @@ RGID(Real Group ID) - identified the group that start the process
 
 nice value of each process decide the priority, -20 (high priority), + 19 (low priority)
 renice +5 pid
+
+w, top, uptime - shows load average (0.45 0.17 0.12) 0.45 - for last min, 0.17 - for last 5 min, 0.12 - for last 15 min
