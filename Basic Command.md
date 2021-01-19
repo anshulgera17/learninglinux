@@ -1,4 +1,9 @@
 # Basic Commands for learning purpose 
+- `#!/bin/bash`  shebang line
+- `#!/bin/sh`  this is also shebang line
+- `lsattr`  shows file attributes 
+- `chattr +i filename` using this command, no one can delete this file, for delete you need to change attribute first
+- `chattr +a filename` using this command, can only append this file not overwrite
 - `curl` tool for transferring data using various network protocols, and for download content using url `curl -o address`
 - `dpkg` or `rpm` low level package manager, `apt`, `yum`, `zypper` or `dnf` are high level package manager
 - `apt-get` package management,(apt)advanced packaging tool for debian `apt-get install foo`, `apt-get update foo`, `apt-get delete foo` `apt-get autoremove foo` `apt-get dist-upgrade` update entire system `apt-cache search foo` show packages named foo `apt-cache dumpavail foo` show all available packages 
@@ -6,6 +11,12 @@
 - `rpm` `rpm -i foo.rpm` `rpm -e foo.rpm` `rpm -U foo.rpm` `rpm -qa` `rpm -qil foo` `rpm -qf file` `rpm -q -whatprovide foo`
 - `dpkg` `dpkg --install foo.deb`  `dpkg --remove foo.deb` `dpkg --list` `dpkg --listfiles foo` `dpkg --search file`
 - `find` for search file in system `sudo find . -name "*.log"` `find /usr -name gcc` `find /usr -type d -name gcc` `find /usr -type f -name gcc` `find -name "*.swp" -exec rm {} ';' ` `find / -ctime 3` -ctime last changed, -atime last accessed, -mtime modified/last written `find / -size 0` `find / -size +10M -exec command {} ’;’`
+- `find / -xdev -type f -size +100000c -exec ls -la {} \; 2>/dev/null | sort -nk5 | tail -20` find the 20 files which are having max size 
+- `find /etc -not -iname "*.conf"` find files in etc directory not with .conf and ignore case also
+- `find /usr/bin -size +2M` find files which are more than 2MB in /usr/bin directory
+- `find /home/evertz/anshul/ -name "*.txt" -exec chmod 700 {} \;` find .txt file and then modify their permission using chmod 
+- `find . -name "*.txt" -exec grep -i "any word" {} \;` Find any word in unknown file
+- `find /path/to/directory/ -mindepth 1 -mtime +5 -delete` Delete files and folder which are older than 5 days 
 - `top`, `htop` check process status
 - `ls` list all directory and files `ls -l` `ls -la` `ls -ltrh` `ls -ltrhS`
 - `cd folder_name` change directory
@@ -38,7 +49,13 @@
 - `who` show who is logged on
 - `ps`  report a snapshot of current process
 - `kill` kill a process
-- `tar` archive a file
+- `tar` archive a file `tar cvzf data_backup.tar.gz .` compress all the files present in current folder
+- `tar cvzf data_backup.tar.gz --exclude=text.txt .` compress all the files present in current folder exclude test.txt file, 
+- `tar cvf data_backup.tar .`
+- `gzip data_backup.tar` give output as
+- `tar -tvf file.tar` Inside .tar file you can see how files are their 
+- `tar -tvf file.tar | grep test` Search inside .tar test file 
+- `tar zxvf filename.tar.gz` unzip files
 - `zip` package and compress(archive) files
 - `unzip`  list, test and extract compressed files in a zip archive
 - `ssh` ssh client remote login program
@@ -46,12 +63,17 @@
 - `fdisk` partition manipulator
 - `tail` print last 10 lines of a file.
 - `free` to check the RAM of a server
+- `du -sch folder_name` check directory size `du -sch /etc`
+- `du -sch /home/evertz/*  | sort -h` show all sub folders size with sorted format
 - `nproc` number of CPUs in a server.
 - `cut` cut is used for manipulating column-based files and is designed to extract specific columns. `ls -l | cut -d" " -f3`
 - `paste` combine fields(such as name or phone number from different files) `paste file1 file2`, `paste -d file1 file2`
 - `join` combine fields if similar columns are their in files `join file1 file2`
 - `split` split file in 100 equal-sized segments `split filename` 
-- `sed` used for modifying the files
+- `sed` used for modifying the files 
+- `sed 's/s/S/g' filename > another_file` all small s make capital S in the file
+- `sed 's/"//g' filename > another_file` all remove all double quotes 
+- `sed 's/$/,/g' filename > another_file` add coma at end of the each line
 - `awk` find and replaces text
 - `diff` identify the deferences between 2 files
 - `more` to view content of a file and navigate through file
@@ -91,6 +113,19 @@
 - `sudo shutdown -h 10:00 "Shutting down for scheduled maintenance."` for restart the server or node `shutdown -r` `reboot`
 - `which diff` locate the program on filesystem
 - `whereis diff` locate packages of the program 
+- `locate filename` for find file in the system you can use locate command also 
+- `locate -e filename` find the file name in server
+- `last reboot` check last reboot 
+- `ftp hostname`
+	or
+- `ftp://username:password@hostname`
+#### Now, once connected the 5 most common options are:
+-  `cd foldername`      e.g. cd /downloads/recent
+-  `get filename`       e.g. get thisisthefileiwant.text
+-  `put filename`       e.g. put sendthistotheserver.txt
+-  `mget filenameregex` e.g mget * to get every file in a directory
+-  `mput filemameregex` e.g. mput *.txt to upload every txt file to the server
+
 - History environment variables like HISTFILE, HISTFILESIZE, HISTSIZE, HISTCONTROL, HISTIGNORE
 - CTRL-L	: Clears the screen
 - CTRL-D	: Exits the current shell

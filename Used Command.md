@@ -1,52 +1,7 @@
 # keeping the commands for learning and practise
 
-- `#!/bin/bash`  shebang line
-- `#!/bin/sh`  this is also shebang line
-- `lsattr`  shows file attributes 
-- `chattr +i filename` using this command, no one can delete this file, for delete you need to change attribute first
-- `chattr +a filename` using this command, can only append this file not overwrite
-- `tar cvzf data_backup.tar.gz .` compress all the files present in current folder
-- `tar cvzf data_backup.tar.gz --exclude=text.txt .` compress all the files present in current folder exclude test.txt file
-- `tar cvf data_backup.tar .`
-- `gzip data_backup.tar` give output as
-- Inside .tar file you can see how files are their `tar -tvf file.tar`
-- Search inside .tar test file `tar -tvf file.tar | grep test`
-- unzip files `tar zxvf filename.tar.gz` 
-
-- `sed 's/s/S/g' filename > another_file` all small s make capital S in the file
-- `sed 's/"//g' filename > another_file` all remove all double quotes 
-- `sed 's/$/,/g' filename > another_file` add coma at end of the each line
-
-- `du -sch folder_name` check directory size 
-- `du -sch /etc` example 
-- `du -sch /home/evertz/*  | sort -h` show all sub folders size with sorted format
-
-#### find the 20 files which are having max size  
-- `find / -xdev -type f -size +100000c -exec ls -la {} \; 2>/dev/null | sort -nk5 | tail -20`
-
-- Delete files and folder which are older than 5 days `find /path/to/directory/ -mindepth 1 -mtime +5 -delete`
-
-#### find use case
-- `find /etc -not -iname "*.conf"` find files in etc directory not with .conf and ignore case also
-- `find /usr/bin -size +2M` find files which are more than 2MB in /usr/bin directory
-- `find /home/evertz/anshul/ -name "*.txt" -exec chmod 700 {} \;` find .txt file and then modify their permission using chmod 
-- Find any word in unknown file `find . -name "*.txt" -exec grep -i "any word" {} \;`
-- for find file in the system you can use locate command also `locate filename`
-- check last reboot `last reboot`
-- find the file name in server `locate -e filename`
-
-- `ftp hostname`
-	or
-- `ftp://username:password@hostname`
-#### Now, once connected the 5 most common options are:
--  `cd foldername`      e.g. cd /downloads/recent
--  `get filename`       e.g. get thisisthefileiwant.text
--  `put filename`       e.g. put sendthistotheserver.txt
--  `mget filenameregex` e.g mget * to get every file in a directory
--  `mput filemameregex` e.g. mput *.txt to upload every txt file to the server
-
-- Command for set the timezone in ec2 instance `sudo dpkg-reconfigure tzdata` 
-- Create the logical volume and add to the existing logical volume in ubuntu EC2 instance. `lsblk`, `vgdisplay`
+- `sudo dpkg-reconfigure tzdata` Command for set the timezone in ec2 instance 
+- `lsblk`, `vgdisplay` Create the logical volume and add to the existing logical volume in ubuntu EC2 instance. 
 
 #### created instance LVM-Testing
 - create 3 volumes (volume1 + volume2 + volume3 ) + 1 volume( volume4)
