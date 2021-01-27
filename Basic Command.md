@@ -37,23 +37,6 @@
 - `chattr +a filename` using this command, can only append this file not overwrite
 - `curl` tool for transferring data using various network protocols, and for download content using url `curl -o address`
 - `top`, `htop` check process status
-#### archive command uses
-- `tar` archive a file `tar cvzf data_backup.tar.gz .` compress all the files present in current folder
-- `tar cvzf data_backup.tar.gz --exclude=text.txt .` compress all the files present in current folder exclude test.txt file, 
-- `tar cvf data_backup.tar .`
-- `tar -tvf file.tar` Inside .tar file you can see how files are their 
-- `tar -tvf file.tar | grep test` Search inside .tar test file 
-- `tar zxvf filename.tar.gz` unzip files
-- `zip` package and compress(archive) files
-- `unzip` list, test and extract compressed files in a zip archive
-- `gzip` The most frequently used Linux compression utility `gzip data_backup.tar` `gzip *` `gzip -r projectX`
-- `gunzip foo` De-compresses foo found in the file foo.gz. Under the hood, the gunzip command is actually the same as `gzip –d`
-- `bzip2` Produces files significantly smaller than those produced by gzip `bzip2 *`
-- `bunzip2 *.bz2` Decompresses all of the files with an extension of .bz2 in the current directory. Under the hood, `bunzip2` is the same as calling `bzip2 -d`
-- `xz` The most space-efficient compression utility used in Linux `xz *` `xz foo`
-- `xz -dk bar.xz` `xz -dcf a.txt b.txt.xz` `xz -d *.xz`
-- `zip`	Is often required to examine and decompress archives from other operating systems
-
 - `ssh` ssh client remote login program
 - `scp` secure copy or remote file copy
 - `fdisk` partition manipulator
@@ -66,26 +49,6 @@
 - `paste` combine fields(such as name or phone number from different files) `paste file1 file2`, `paste -d file1 file2`
 - `join` combine fields if similar columns are their in files `join file1 file2`
 - `split` split file in 100 equal-sized segments `split filename` 
-#### Find Command uses
-- `find` for search file in system `sudo find . -name "*.log"` `find /usr -name gcc` `find /usr -type d -name gcc` `find /usr -type f -name gcc` `find -name "*.swp" -exec rm {} ';' ` `find / -ctime 3` -ctime last changed, -atime last accessed, -mtime modified/last written `find / -size 0` `find / -size +10M -exec command {} ’;’`
-- `find / -xdev -type f -size +100000c -exec ls -la {} \; 2>/dev/null | sort -nk5 | tail -20` find the 20 files which are having max size 
-- `find /etc -not -iname "*.conf"` find files in etc directory not with .conf and ignore case also
-- `find /usr/bin -size +2M` find files which are more than 2MB in /usr/bin directory
-- `find /home/evertz/anshul/ -name "*.txt" -exec chmod 700 {} \;` find .txt file and then modify their permission using chmod 
-- `find . -name "*.txt" -exec grep -i "any word" {} \;` Find any word in unknown file
-- `find /path/to/directory/ -mindepth 1 -mtime +5 -delete` Delete files and folder which are older than 5 days
-#### sed command uses
-- `sed` used for modifying the files 
-- `sed 's/s/S/g' filename > another_file` all small s make capital S in the file
-- `sed 's/"//g' filename > another_file` all remove all double quotes 
-- `sed 's/$/,/g' filename > another_file` add coma at end of the each line
-#### awk command uses
-- `awk` find and replaces text
-```
-awk '{print}' emp.txt
-awk '/manager/ {print}' emp.txt
-awk '{print $1,$4}' emp.txt`
-```
 - `diff` identify the deferences between 2 files
 - `diff3` compare 3 files 
 - `patch` 
@@ -95,7 +58,6 @@ awk '{print $1,$4}' emp.txt`
 rsync -r project-X archive-machine:archives/project-X
 rsync --progress -avrxH  --delete sourcedir destdir
 ```
-
 - `more` to view content of a file and navigate through file
 - `less` to view content of a file and navigate through file, less is faster because it didn't load whole file at once
 - `host google.com` will show the ip address of the url
@@ -139,6 +101,49 @@ rsync --progress -avrxH  --delete sourcedir destdir
 - `ftp hostname`
 	or
 - `ftp://username:password@hostname`
+- `dd` disk to disk copying `dd if=/dev/sda of=sda.mbr bs=512 count=1` 
+#### Find Command uses
+- `find` for search file in system `sudo find . -name "*.log"` `find /usr -name gcc` `find /usr -type d -name gcc` `find /usr -type f -name gcc` `find -name "*.swp" -exec rm {} ';' ` `find / -ctime 3` -ctime last changed, -atime last accessed, -mtime modified/last written `find / -size 0` `find / -size +10M -exec command {} ’;’`
+- `find / -xdev -type f -size +100000c -exec ls -la {} \; 2>/dev/null | sort -nk5 | tail -20` find the 20 files which are having max size 
+- `find /etc -not -iname "*.conf"` find files in etc directory not with .conf and ignore case also
+- `find /usr/bin -size +2M` find files which are more than 2MB in /usr/bin directory
+- `find /home/evertz/anshul/ -name "*.txt" -exec chmod 700 {} \;` find .txt file and then modify their permission using chmod 
+- `find . -name "*.txt" -exec grep -i "any word" {} \;` Find any word in unknown file
+- `find /path/to/directory/ -mindepth 1 -mtime +5 -delete` Delete files and folder which are older than 5 days
+#### sed command uses
+- `sed` used for modifying the files 
+- `sed 's/s/S/g' filename > another_file` all small s make capital S in the file
+- `sed 's/"//g' filename > another_file` all remove all double quotes 
+- `sed 's/$/,/g' filename > another_file` add coma at end of the each line
+#### awk command uses
+- `awk` find and replaces text
+```
+awk '{print}' emp.txt
+awk '/manager/ {print}' emp.txt
+awk '{print $1,$4}' emp.txt`
+```
+#### archive command uses
+- `tar` archive a file, tar stood for "tape archive" `tar cvzf data_backup.tar.gz .` compress all the files present in current folder
+- `tar cvzf data_backup.tar.gz --exclude=text.txt .` compress all the files present in current folder exclude test.txt file, 
+- `tar cvf data_backup.tar .`
+- `tar -tvf file.tar` Inside .tar file you can see how files are their 
+- `tar -tvf file.tar | grep test` Search inside .tar test file 
+- `tar zxvf filename.tar.gz` unzip files
+- `tar xvf mydir.tar` Extract all the files in mydir.tar into the mydir directory
+- `tar zcvf mydir.tar.gz mydir` Create the archive and compress with gzip
+- `tar jcvf mydir.tar.bz2 mydir` Create the archive and compress with bz2
+- `tar Jcvf mydir.tar.xz mydir` Create the archive and compress with xz
+- `tar xvf mydir.tar.gz` Extract all the files in mydir.tar.gz into the mydir directory
+- `zip` package and compress(archive) files
+- `unzip` list, test and extract compressed files in a zip archive
+- `gzip` The most frequently used Linux compression utility `gzip data_backup.tar` `gzip *` `gzip -r projectX`
+- `gunzip foo` De-compresses foo found in the file foo.gz. Under the hood, the gunzip command is actually the same as `gzip –d`
+- `bzip2` Produces files significantly smaller than those produced by gzip `bzip2 *`
+- `bunzip2 *.bz2` Decompresses all of the files with an extension of .bz2 in the current directory. Under the hood, `bunzip2` is the same as calling `bzip2 -d`
+- `xz` The most space-efficient compression utility used in Linux `xz *` `xz foo`
+- `xz -dk bar.xz` `xz -dcf a.txt b.txt.xz` `xz -d *.xz`
+- `zip`	Is often required to examine and decompress archives from other operating systems `zip backup *` `zip -r backup.zip ~`
+- `unzip backup.zip` Extracts all files in backup.zip and places them in the current directory
 #### Package installation commands
 - `dpkg` or `rpm` low level package manager, `apt`, `yum`, `zypper` or `dnf` are high level package manager
 - `apt-get` package management,(apt)advanced packaging tool for debian `apt-get install foo`, `apt-get update foo`, `apt-get delete foo` `apt-get autoremove foo` `apt-get dist-upgrade` update entire system `apt-cache search foo` show packages named foo `apt-cache dumpavail foo` show all available packages 
