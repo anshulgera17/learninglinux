@@ -254,8 +254,3 @@ command list
 fi
 ```
 
-```
-awk '{print}' emp.txt
-awk '/manager/ {print}' emp.txt
-awk '{print $1,$4}' emp.txt`
-```

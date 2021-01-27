@@ -1,12 +1,7 @@
 # Basic Commands for learning purpose 
 - `#!/bin/bash`  shebang line
 - `#!/bin/sh`  this is also shebang line
-- `lsattr`  shows file attributes 
-- `chattr +i filename` using this command, no one can delete this file, for delete you need to change attribute first
-- `chattr +a filename` using this command, can only append this file not overwrite
-- `curl` tool for transferring data using various network protocols, and for download content using url `curl -o address`
- 
-- `top`, `htop` check process status
+
 - `ls` list all directory and files `ls -l` `ls -la` `ls -ltrh` `ls -ltrhS`
 - `cd folder_name` change directory
 - `cd ..` p1 level in directory
@@ -38,6 +33,12 @@
 - `who` show who is logged on
 - `ps`  report a snapshot of current process
 - `kill` kill a process
+- `lsattr`  shows file attributes 
+- `chattr +i filename` using this command, no one can delete this file, for delete you need to change attribute first
+- `chattr +a filename` using this command, can only append this file not overwrite
+- `curl` tool for transferring data using various network protocols, and for download content using url `curl -o address`
+- `top`, `htop` check process status
+#### tar command uses
 - `tar` archive a file `tar cvzf data_backup.tar.gz .` compress all the files present in current folder
 - `tar cvzf data_backup.tar.gz --exclude=text.txt .` compress all the files present in current folder exclude test.txt file, 
 - `tar cvf data_backup.tar .`
@@ -72,7 +73,13 @@
 - `sed 's/s/S/g' filename > another_file` all small s make capital S in the file
 - `sed 's/"//g' filename > another_file` all remove all double quotes 
 - `sed 's/$/,/g' filename > another_file` add coma at end of the each line
+#### awk command uses
 - `awk` find and replaces text
+```
+awk '{print}' emp.txt
+awk '/manager/ {print}' emp.txt
+awk '{print $1,$4}' emp.txt`
+```
 - `diff` identify the deferences between 2 files
 - `diff3` compare 3 files 
 - `patch` 
