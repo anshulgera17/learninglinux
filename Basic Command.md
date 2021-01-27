@@ -1,11 +1,10 @@
 # Basic Commands for learning purpose 
 - `#!/bin/bash`  shebang line
 - `#!/bin/sh`  this is also shebang line
-
+- `pwd` print working directory
 - `ls` list all directory and files `ls -l` `ls -la` `ls -ltrh` `ls -ltrhS`
 - `cd folder_name` change directory
 - `cd ..` p1 level in directory
-- `pwd` print working directory
 - `cp`  copy `cp filename destinationpath` `cp abc.txt /home/user/` `cp /home/user/abc.txt /tmp/new_abc.txt` `cp abc.txt ../../`
 - `rm`  remove or delete a file `rm abc.txt`
 - `mv`  moves a file one name to another or rename
@@ -38,16 +37,23 @@
 - `chattr +a filename` using this command, can only append this file not overwrite
 - `curl` tool for transferring data using various network protocols, and for download content using url `curl -o address`
 - `top`, `htop` check process status
-#### tar command uses
+#### archive command uses
 - `tar` archive a file `tar cvzf data_backup.tar.gz .` compress all the files present in current folder
 - `tar cvzf data_backup.tar.gz --exclude=text.txt .` compress all the files present in current folder exclude test.txt file, 
 - `tar cvf data_backup.tar .`
-- `gzip data_backup.tar` give output as
 - `tar -tvf file.tar` Inside .tar file you can see how files are their 
 - `tar -tvf file.tar | grep test` Search inside .tar test file 
 - `tar zxvf filename.tar.gz` unzip files
 - `zip` package and compress(archive) files
-- `unzip`  list, test and extract compressed files in a zip archive
+- `unzip` list, test and extract compressed files in a zip archive
+- `gzip` The most frequently used Linux compression utility `gzip data_backup.tar` `gzip *` `gzip -r projectX`
+- `gunzip foo` De-compresses foo found in the file foo.gz. Under the hood, the gunzip command is actually the same as `gzip –d`
+- `bzip2` Produces files significantly smaller than those produced by gzip `bzip2 *`
+- `bunzip2 *.bz2` Decompresses all of the files with an extension of .bz2 in the current directory. Under the hood, `bunzip2` is the same as calling `bzip2 -d`
+- `xz` The most space-efficient compression utility used in Linux `xz *` `xz foo`
+- `xz -dk bar.xz` `xz -dcf a.txt b.txt.xz` `xz -d *.xz`
+- `zip`	Is often required to examine and decompress archives from other operating systems
+
 - `ssh` ssh client remote login program
 - `scp` secure copy or remote file copy
 - `fdisk` partition manipulator
@@ -83,6 +89,13 @@ awk '{print $1,$4}' emp.txt`
 - `diff` identify the deferences between 2 files
 - `diff3` compare 3 files 
 - `patch` 
+- `file filename` tells us which type of file it is linux is not dependent on extension of files `file *`
+- `rsync` is a very powerful utility. For example, a very useful way to back up a project directory might be to use the following command:
+```
+rsync -r project-X archive-machine:archives/project-X
+rsync --progress -avrxH  --delete sourcedir destdir
+```
+
 - `more` to view content of a file and navigate through file
 - `less` to view content of a file and navigate through file, less is faster because it didn't load whole file at once
 - `host google.com` will show the ip address of the url
