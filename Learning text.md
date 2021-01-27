@@ -76,3 +76,25 @@
 - `k`	Kill a specific process
 - `f`	Enter the top configuration screen
 - `o`	Interactively select a new sort order in the process list
+#### Vi editor command mode
+```
+Key	Usage
+a	Append text after cursor; stop upon Escape key
+A	Append text at end of current line; stop upon Escape key
+i	Insert text before cursor; stop upon Escape key
+I	Insert text at beginning of current line; stop upon Escape key
+o	Start a new line below current line, insert text there; stop upon Escape key
+O	Start a new line above current line, insert text there; stop upon Escape key
+r	Replace character at current position
+R	Replace text starting with current position; stop upon Escape key
+x	Delete character at current position
+Nx	Delete N characters, starting at current position
+dw	Delete the word at the current position
+D	Delete the rest of the current line
+dd	Delete the current line
+Ndd or dNd	Delete N lines
+u	Undo the previous operation
+yy	Yank (copy) the current line and put it in buffer
+Nyy or yNy	Yank (copy) N lines and put it in buffer
+p	Paste at the current position the yanked line or lines from the buffer.
+```
