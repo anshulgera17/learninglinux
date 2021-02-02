@@ -4,13 +4,16 @@
 - `lsblk`, `vgdisplay` Create the logical volume and add to the existing logical volume in ubuntu EC2 instance. 
 
 #### created instance LVM-Testing
+
 - create 3 volumes (volume1 + volume2 + volume3 ) + 1 volume( volume4)
 - add first 3 volumes in 1 logical volume name volumeall `lsblk`
 
 #### check the name of the attached volume then 
+
 - `sudo pvcreate /dev/xvdf /dev/xvdg /dev/xvdh` 
 
 #### 3 volumes attached to this instance
+
 - `sudo pvdisplay`
 - `sudo vgcreate volumeall /dev/xvdf /dev/xvdg /dev/xvdh`
 - `sudo vgextend volumeall /dev/xvdj`
@@ -18,6 +21,7 @@
 - `sudo pvcreate /dev/xvdi`
 
 #### Need to create logical volume and the extend logical volume 
+
 - `sudo lvcreate -nfedora64-1 -L8G volumeall`
 - `sudo lvextend -L +20G   /dev/precise-build`
 - `sudo resize2fs /dev/precise-build/root`
@@ -32,8 +36,9 @@
 - `time find / -name core` 
 
 #### check the RAM  or free space
+
 - `cat /proc/meminfo`
-- `vmstat -s `
+- `vmstat -s`
 - `htop`
 - `free -m`
 
@@ -44,14 +49,16 @@
 - check the port data transmission and configuration for ptpd `sudo ethtool eth4`
 
 #### Database commands
--  `mysql  –u MEDDBA –p`
--  `Masterkey`
--  `show databases;`
--  `use mysql;`
--  `show tables;`
--  `describe tablename;`
+
+- `mysql  –u MEDDBA –p`
+- `Masterkey`
+- `show databases;`
+- `use mysql;`
+- `show tables;`
+- `describe tablename;`
 
 #### Check the system level logs
+
 - `/var/log/dmesg`
 - `/var/log/kern.log`
 - `/var/log/syslog`
@@ -72,13 +79,13 @@
 - show the list of files according to size  `ls –ltrhS`
 
 - TOP 10 Files which are having max size in whole system 
-- `du  -a  / | sort  -n  -r | head  -n 10 `
+- `du  -a  / | sort  -n  -r | head  -n 10`
 - `find / -size +1G -size -3G 2>> /dev/null`
 
 - copy files or folder from one server to another scp filename  server name or IP:/path/
 - `scp  -r foldername server name or IP:/path/`
 - Kill any process `kill -9 processId`
-- Search the process by its name      	
+- Search the process by its name
 - `ps  -aux | grep process name`
 - `ps aux | grep java | grep -v grep`  search java process and remove grep from the result
 - `ps aux | grep java | grep -v grep | wc -l` number of process count 
@@ -86,7 +93,9 @@
 - Display all the processes and how much memory, cpu time, user, pid à `top`
 
 - `dig url +trace`
+
 #### Screen command use
+
 - screen -S {name} # where 'name' is any name you want to give your screen session
 - Then you're in the screen session, which looks like nothing has changed practically
 - Then type the command in like you normally would.
@@ -103,7 +112,7 @@
 - show built in commands `enable`
 - shows keyword `compgen -k`
 
-```
+```{.sh}
 a=1
 (
 a=2
@@ -112,7 +121,7 @@ echo $a
 #prints 1
 ```
 
-```
+```{.sh}
 a=1
 {
 a=2
@@ -122,23 +131,23 @@ echo $a
 ```
 
 - interpret the command inside the source script
-- `source example.sh  or . example.sh `
+- `source example.sh  or . example.sh`
 - `alias ll="ls -l"`
 
-```
+```{.sh}
 typeset -i x
 declare -i y
 ```
 
-```
-while ((x<10))	
+```{.sh}
+while ((x<10)) 
 do 
-	echo loop $x; date > data.$x
-	((x=x+1))
+echo loop $x; date > data.$x
+((x=x+1))
 done
 ```
 
-```
+```{.sh}
 while 
 read a b
 do 
@@ -146,7 +155,7 @@ echo a is $a b is $b
 done
 ```
 
-```
+```{.sh}
 ls -l | while 
 read a b c d 
 do
@@ -154,21 +163,21 @@ echo owner is $c
 done
 ```
 
-```
+```{.sh}
 for <var> in <list>
 do
 command
 done
 ```
 
-```
+```{.sh}
 for i in dog cat elephant 
 do 
 echo $i
 done
 ```
 
-```
+```{.sh}
 seq 1 5 
 for num in `seq 1 5`
 do 
@@ -176,7 +185,7 @@ echo $num
 done
 ```
 
-```
+```{.sh}
 {A..Z}
 {1..10}
 
@@ -187,7 +196,7 @@ for j in *.c
 for f in  $(find . -name *.c)
 ```
 
-```
+```{.sh}
 : 'dsjfjds
 dsjfnjnf
 sfjsndfke
@@ -196,7 +205,7 @@ this is also comment
 0-> stdin, 1-> stdout, 2-> stderr
 ```
 
-```
+```{.sh}
 command &> file 
 
 command | command2
@@ -209,7 +218,7 @@ command >> file
 command &>> file
 ```
 
-```
+```{.sh}
 sort <<END
 cherry
 bana
@@ -217,7 +226,7 @@ app
 END
 ```
 
-```
+```{.sh}
 exec N< myfile
 exec N> myfile
 exec N<> myfile
@@ -226,25 +235,24 @@ exec 7>/tmp/myfile7
 lsof -p $$
 ```
 
-
-```
+```{.sh}
 case expression in 
-	pattern 1 )
-	command list;;
-	pattern 2 )
-	command list ;;
+pattern 1 )
+command list;;
+pattern 2 )
+command list ;;
 esac
 ```
 
-```
+```{.sh}
 case $ans in 
-	yes|YES|y|Y|y.x ) echo "will do !";;
-	n*|N*) echo "will NOT do!";;
-	*) echo "Oops!";;
+yes|YES|y|Y|y.x ) echo "will do !";;
+n*|N*) echo "will NOT do!";;
+*) echo "Oops!";;
 esac
 ```
 
-```
+```{.sh}
 if 
 command list 
 then 
@@ -253,4 +261,3 @@ else
 command list
 fi
 ```
-

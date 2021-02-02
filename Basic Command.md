@@ -1,4 +1,5 @@
 # Basic Commands for learning purpose 
+
 - `#!/bin/bash`  shebang line
 - `#!/bin/sh`  this is also shebang line
 - `pwd` print working directory
@@ -54,10 +55,12 @@
 - `patch` 
 - `file filename` tells us which type of file it is linux is not dependent on extension of files `file *`
 - `rsync` is a very powerful utility. For example, a very useful way to back up a project directory might be to use the following command:
+
+``` { .sh }
+    rsync -r project-X archive-machine:archives/project-X
+    rsync --progress -avrxH  --delete sourcedir destdir
 ```
-rsync -r project-X archive-machine:archives/project-X
-rsync --progress -avrxH  --delete sourcedir destdir
-```
+
 - `more` to view content of a file and navigate through file
 - `less` to view content of a file and navigate through file, less is faster because it didn't load whole file at once
 - `host google.com` will show the ip address of the url
@@ -99,30 +102,39 @@ rsync --progress -avrxH  --delete sourcedir destdir
 - `locate -e filename` find the file name in server
 - `last reboot` check last reboot 
 - `ftp hostname`
-	or
+ or
 - `ftp://username:password@hostname`
-- `dd` disk to disk copying `dd if=/dev/sda of=sda.mbr bs=512 count=1` 
+- `dd` disk to disk copying `dd if=/dev/sda of=sda.mbr bs=512 count=1`
+
 #### Find Command uses
-- `find` for search file in system `sudo find . -name "*.log"` `find /usr -name gcc` `find /usr -type d -name gcc` `find /usr -type f -name gcc` `find -name "*.swp" -exec rm {} ';' ` `find / -ctime 3` -ctime last changed, -atime last accessed, -mtime modified/last written `find / -size 0` `find / -size +10M -exec command {} ’;’`
+
+- `find` for search file in system `sudo find . -name "*.log"` `find /usr -name gcc` `find /usr -type d -name gcc` `find /usr -type f -name gcc` `find -name "*.swp" -exec rm {} ';'` `find / -ctime 3` -ctime last changed, -atime last accessed, -mtime modified/last written `find / -size 0` `find / -size +10M -exec command {} ’;’`
 - `find / -xdev -type f -size +100000c -exec ls -la {} \; 2>/dev/null | sort -nk5 | tail -20` find the 20 files which are having max size 
 - `find /etc -not -iname "*.conf"` find files in etc directory not with .conf and ignore case also
 - `find /usr/bin -size +2M` find files which are more than 2MB in /usr/bin directory
 - `find /home/evertz/anshul/ -name "*.txt" -exec chmod 700 {} \;` find .txt file and then modify their permission using chmod 
 - `find . -name "*.txt" -exec grep -i "any word" {} \;` Find any word in unknown file
 - `find /path/to/directory/ -mindepth 1 -mtime +5 -delete` Delete files and folder which are older than 5 days
+
 #### sed command uses
-- `sed` used for modifying the files 
+
+- `sed` used for modifying the files
 - `sed 's/s/S/g' filename > another_file` all small s make capital S in the file
 - `sed 's/"//g' filename > another_file` all remove all double quotes 
 - `sed 's/$/,/g' filename > another_file` add coma at end of the each line
+
 #### awk command uses
+
 - `awk` find and replaces text
-```
+
+```{ .sh }
 awk '{print}' emp.txt
 awk '/manager/ {print}' emp.txt
 awk '{print $1,$4}' emp.txt`
 ```
+
 #### archive command uses
+
 - `tar` archive a file, tar stood for "tape archive" `tar cvzf data_backup.tar.gz .` compress all the files present in current folder
 - `tar cvzf data_backup.tar.gz --exclude=text.txt .` compress all the files present in current folder exclude test.txt file, 
 - `tar cvf data_backup.tar .`
@@ -144,27 +156,31 @@ awk '{print $1,$4}' emp.txt`
 - `xz -dk bar.xz` `xz -dcf a.txt b.txt.xz` `xz -d *.xz`
 - `zip`	Is often required to examine and decompress archives from other operating systems `zip backup *` `zip -r backup.zip ~`
 - `unzip backup.zip` Extracts all files in backup.zip and places them in the current directory
+
 #### Package installation commands
+
 - `dpkg` or `rpm` low level package manager, `apt`, `yum`, `zypper` or `dnf` are high level package manager
 - `apt-get` package management,(apt)advanced packaging tool for debian `apt-get install foo`, `apt-get update foo`, `apt-get delete foo` `apt-get autoremove foo` `apt-get dist-upgrade` update entire system `apt-cache search foo` show packages named foo `apt-cache dumpavail foo` show all available packages 
 - `yum` package management for redhat `yum install foo` `yum remove foo` `yum update foo` `yum update` `yum list "foo"` `yum list`
 - `rpm` `rpm -i foo.rpm` `rpm -e foo.rpm` `rpm -U foo.rpm` `rpm -qa` `rpm -qil foo` `rpm -qf file` `rpm -q -whatprovide foo`
 - `dpkg` `dpkg --install foo.deb`  `dpkg --remove foo.deb` `dpkg --list` `dpkg --listfiles foo` `dpkg --search file`
-#### Now, once connected the 5 most common options are:
--  `cd foldername`      e.g. cd /downloads/recent
--  `get filename`       e.g. get thisisthefileiwant.text
--  `put filename`       e.g. put sendthistotheserver.txt
--  `mget filenameregex` e.g mget * to get every file in a directory
--  `mput filemameregex` e.g. mput *.txt to upload every txt file to the server
+
+#### Now, once connected the 5 most common options are
+
+- `cd foldername`      e.g. cd /downloads/recent
+- `get filename`       e.g. get thisisthefileiwant.text
+- `put filename`       e.g. put sendthistotheserver.txt
+- `mget filenameregex` e.g mget * to get every file in a directory
+- `mput filemameregex` e.g. mput *.txt to upload every txt file to the server
 
 - History environment variables like HISTFILE, HISTFILESIZE, HISTSIZE, HISTCONTROL, HISTIGNORE
-- CTRL-L	: Clears the screen
-- CTRL-D	: Exits the current shell
-- CTRL-Z	: Puts the current process into suspended background
-- CTRL-C	: Kills the current process
-- CTRL-H	: Works the same as backspace
-- CTRL-A	: Goes to the beginning of the line
-- CTRL-W	: Deletes the word before the cursor
-- CTRL-U	: Deletes from beginning of line to cursor position
-- CTRL-E	: Goes to the end of the line
-- Tab	: Auto-completes files, directories, and binaries
+- CTRL-L: Clears the screen
+- CTRL-D: Exits the current shell
+- CTRL-Z: Puts the current process into suspended background
+- CTRL-C: Kills the current process
+- CTRL-H: Works the same as backspace
+- CTRL-A: Goes to the beginning of the line
+- CTRL-W: Deletes the word before the cursor
+- CTRL-U: Deletes from beginning of line to cursor position
+- CTRL-E: Goes to the end of the line
+- Tab: Auto-completes files, directories, and binaries
