@@ -19,7 +19,7 @@
 - `cat` concatenate files and print on the standard output
 - `echo` display a line of text
 - `grep` print lines matching a pattern
-- examples of grep  `grep -r 'string'`, `egrep`, `zgrep -e`
+- examples of grep  `grep -r 'string'`, `egrep`, `zgrep -e`, `grep -v pattern filename`, `grep [0-9] filename`, `grep -C 3 pattern filename`
 - `strings` strings is used to extract all printable character strings found in the file or files given as arguments. It is useful in - locating human-readable content embedded in binary files; for text files one can just use grep.
 - `tr` translate or delete characters , `cat city | tr [a-z] [A-Z], tr '{}' '[]' inputfile outputfile`, 
 - `tee` tee takes the output from any command, and, while sending it to standard output, it also saves it to a file. `find -name "g*cfs" | tee /tmp/tee_output`
