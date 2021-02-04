@@ -1,4 +1,4 @@
-# Basic Commands for learning purpose 
+# Basic Linux Commands for learning purpose
 
 - `#!/bin/bash`  shebang line
 - `#!/bin/sh`  this is also shebang line
@@ -10,7 +10,7 @@
 - `rm`  remove or delete a file `rm abc.txt`
 - `mv`  moves a file one name to another or rename
 - `mkdir` make directory `mkdir folder/directory name`
-- `rmdir` remove directory 
+- `rmdir` remove directory
 - `touch` is often used to set or update the access, change, and modify times of files, however you can also create empty file using touch `touch filename` `touch -t 202012091600 myfile` 09 Dec 2020 16:00 myfile timestamp
 - `tree` display a tree view of the filesystem `tree -d` for directories
 - `head` print first 10 lines of the file
@@ -24,7 +24,6 @@
 - `tr` translate or delete characters , `cat city | tr [a-z] [A-Z], tr '{}' '[]' inputfile outputfile`, 
 - `tee` tee takes the output from any command, and, while sending it to standard output, it also saves it to a file. `find -name "g*cfs" | tee /tmp/tee_output`
 - `wc` print the number of newlines words and bytes in files
-- `sort` sort lines of text file, `sort filename`, `sort -r filename`, `sort -k 3 filename`, `sort -u filename`  
 - `uniq` uniq removes duplicate consecutive lines in a text file and is useful for simplifying the text display. `sort file1 file2 |  uniq > file3, uniq -c filename`
 - `chmod` change file access permission
 - `chown` change file owner and group
@@ -106,7 +105,15 @@
 - `ftp://username:password@hostname`
 - `dd` disk to disk copying `dd if=/dev/sda of=sda.mbr bs=512 count=1`
 
-#### Find Command uses
+## sort command uses
+
+- `sort` sort lines of text file, 
+- `sort filename` sort the lines in the specified file, according to the character at the beginning of each line
+- `sort -r filename` sort the lines in reverse order
+- `sort -k 3 filename` sort the lines by the 3rd field on each line instead of the beginning
+- `sort -u filename` checks for the unique values after sorting the records 
+
+## Find Command uses
 
 - `find` for search file in system `sudo find . -name "*.log"` `find /usr -name gcc` `find /usr -type d -name gcc` `find /usr -type f -name gcc` `find -name "*.swp" -exec rm {} ';'` `find / -ctime 3` -ctime last changed, -atime last accessed, -mtime modified/last written `find / -size 0` `find / -size +10M -exec command {} ’;’`
 - `find / -xdev -type f -size +100000c -exec ls -la {} \; 2>/dev/null | sort -nk5 | tail -20` find the 20 files which are having max size 
@@ -116,24 +123,24 @@
 - `find . -name "*.txt" -exec grep -i "any word" {} \;` Find any word in unknown file
 - `find /path/to/directory/ -mindepth 1 -mtime +5 -delete` Delete files and folder which are older than 5 days
 
-#### sed command uses
+## sed command uses
 
 - `sed` used for modifying the files
+- `sed s/pattern/replace_pattern/' filename` substitute the first string occurance in every line
+- `sed 1, 3s/pattern/replace_pattern/' filename` substitute all string occurance in range of lines
 - `sed 's/s/S/g' filename > another_file` all small s make capital S in the file
-- `sed 's/"//g' filename > another_file` all remove all double quotes 
+- `sed 's/"//g' filename > another_file` all remove all double quotes
 - `sed 's/$/,/g' filename > another_file` add coma at end of the each line
+- `sed -i s/pattern/replace_pattern/g' filename` save changes for string substitution in the same file
 
-#### awk command uses
+## awk command uses
 
 - `awk` find and replaces text
+- `awk '{ print $0 }' /etc/passwd`  print entire file
+- `awk -F: '{ print $1 }' /etc/passwd`  print first field(column) of every line, seperated by a space
+- `awk -F: '{ print $1 $7 }'/etc/passwd` print first and seventh field of every line
 
-```{ .sh }
-awk '{print}' emp.txt
-awk '/manager/ {print}' emp.txt
-awk '{print $1,$4}' emp.txt`
-```
-
-#### archive command uses
+## archive command uses
 
 - `tar` archive a file, tar stood for "tape archive" `tar cvzf data_backup.tar.gz .` compress all the files present in current folder
 - `tar cvzf data_backup.tar.gz --exclude=text.txt .` compress all the files present in current folder exclude test.txt file, 
@@ -157,7 +164,7 @@ awk '{print $1,$4}' emp.txt`
 - `zip`	Is often required to examine and decompress archives from other operating systems `zip backup *` `zip -r backup.zip ~`
 - `unzip backup.zip` Extracts all files in backup.zip and places them in the current directory
 
-#### Package installation commands
+## Package installation commands
 
 - `dpkg` or `rpm` low level package manager, `apt`, `yum`, `zypper` or `dnf` are high level package manager
 - `apt-get` package management,(apt)advanced packaging tool for debian `apt-get install foo`, `apt-get update foo`, `apt-get delete foo` `apt-get autoremove foo` `apt-get dist-upgrade` update entire system `apt-cache search foo` show packages named foo `apt-cache dumpavail foo` show all available packages 
@@ -165,7 +172,7 @@ awk '{print $1,$4}' emp.txt`
 - `rpm` `rpm -i foo.rpm` `rpm -e foo.rpm` `rpm -U foo.rpm` `rpm -qa` `rpm -qil foo` `rpm -qf file` `rpm -q -whatprovide foo`
 - `dpkg` `dpkg --install foo.deb`  `dpkg --remove foo.deb` `dpkg --list` `dpkg --listfiles foo` `dpkg --search file`
 
-#### Now, once connected the 5 most common options are
+## Now, once connected the 5 most common options are
 
 - `cd foldername`      e.g. cd /downloads/recent
 - `get filename`       e.g. get thisisthefileiwant.text

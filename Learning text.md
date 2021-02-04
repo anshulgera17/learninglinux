@@ -1,3 +1,4 @@
+# Linux Learning
 
 - Red Hat Family Systems (including CentOS and Fedora)
 - SUSE Family Systems (including openSUSE) - using zypper for install, update and remove packages
@@ -5,7 +6,7 @@
 
 - The /proc filesystem contains virtual files (files that exist only in memory) that permit viewing constantly changing kernel data. /proc contains files and directories that mimic kernel structures and configuration information. It does not contain real files, but runtime system information, e.g. system memory, devices mounted, hardware configuration, etc. Some important entries in /proc are:
 
-```
+```{.sh}
 /proc/cpuinfo
 /proc/interrupts
 /proc/meminfo
@@ -16,8 +17,8 @@
 /proc/<Process-ID-#>
 /proc/sys
 ```
-- The first example shows there is a directory for every process running on the system, which contains vital information about it. The second example shows a virtual directory that contains a lot of information about the entire system, in particular its hardware and configuration. The /proc filesystem is very useful because the information it reports is gathered only as needed and never needs storage on the disk.
 
+- The first example shows there is a directory for every process running on the system, which contains vital information about it. The second example shows a virtual directory that contains a lot of information about the entire system, in particular its hardware and configuration. The /proc filesystem is very useful because the information it reports is gathered only as needed and never needs storage on the disk.
 
 - /bin - for normal binary files
 - /sbin - for adminstrative binary files
@@ -68,7 +69,9 @@
 - Percentage of CPU (%CPU) and memory (%MEM) used
 - Execution time (TIME+)
 - Command (COMMAND).
+
 #### top command for interactive session
+
 - `t`	Display or hide summary information (rows 2 and 3)
 - `m`	Display or hide memory information (rows 4 and 5)
 - `A`	Sort the process list by top resource consumers
@@ -76,25 +79,27 @@
 - `k`	Kill a specific process
 - `f`	Enter the top configuration screen
 - `o`	Interactively select a new sort order in the process list
+
 #### Vi editor command mode
-```
-Key	Usage
-a	Append text after cursor; stop upon Escape key
-A	Append text at end of current line; stop upon Escape key
-i	Insert text before cursor; stop upon Escape key
-I	Insert text at beginning of current line; stop upon Escape key
-o	Start a new line below current line, insert text there; stop upon Escape key
-O	Start a new line above current line, insert text there; stop upon Escape key
-r	Replace character at current position
-R	Replace text starting with current position; stop upon Escape key
-x	Delete character at current position
-Nx	Delete N characters, starting at current position
-dw	Delete the word at the current position
-D	Delete the rest of the current line
-dd	Delete the current line
-Ndd or dNd	Delete N lines
-u	Undo the previous operation
-yy	Yank (copy) the current line and put it in buffer
-Nyy or yNy	Yank (copy) N lines and put it in buffer
-p	Paste at the current position the yanked line or lines from the buffer.
+
+```{.sh}
+Key Usage
+a Append text after cursor; stop upon Escape key
+A Append text at end of current line; stop upon Escape key
+i Insert text before cursor; stop upon Escape key
+I Insert text at beginning of current line; stop upon Escape key
+o Start a new line below current line, insert text there; stop upon Escape key
+O Start a new line above current line, insert text there; stop upon Escape key
+r Replace character at current position
+R Replace text starting with current position; stop upon Escape key
+x Delete character at current position
+Nx Delete N characters, starting at current position
+dw Delete the word at the current position
+D Delete the rest of the current line
+dd Delete the current line
+Ndd or dNd Delete N lines
+u Undo the previous operation
+yy Yank (copy) the current line and put it in buffer
+Nyy or yNy Yank (copy) N lines and put it in buffer
+p Paste at the current position the yanked line or lines from the buffer.
 ```
