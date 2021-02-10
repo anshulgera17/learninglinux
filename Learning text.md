@@ -59,7 +59,7 @@
 - w, top, uptime - shows load average (0.45 0.17 0.12) 0.45 - for last min, 0.17 - for last 5 min, 0.12 - for last 15 min
 - third line of top command: The percentage of user jobs running at a lower priority (niceness - ni) is then listed. Idle mode (id) should be low if the load average is high, and vice versa. The percentage of jobs waiting (wa) for I/O is listed. Interrupts include the percentage of hardware (hi) vs. software interrupts (si). Steal time (st) is generally used with virtual machines, which has some of its idle CPU time taken for other uses.
 
-#### top command columns details:
+## top command columns details:
 
 - Process Identification Number (PID)
 - Process owner (USER)
@@ -70,17 +70,17 @@
 - Execution time (TIME+)
 - Command (COMMAND).
 
-#### top command for interactive session
+## top command for interactive session
 
-- `t`	Display or hide summary information (rows 2 and 3)
-- `m`	Display or hide memory information (rows 4 and 5)
-- `A`	Sort the process list by top resource consumers
-- `r`	Renice (change the priority of) a specific processes
-- `k`	Kill a specific process
-- `f`	Enter the top configuration screen
-- `o`	Interactively select a new sort order in the process list
+- `t` Display or hide summary information (rows 2 and 3)
+- `m` Display or hide memory information (rows 4 and 5)
+- `A` Sort the process list by top resource consumers
+- `r` Renice (change the priority of) a specific processes
+- `k` Kill a specific process
+- `f` Enter the top configuration screen
+- `o` Interactively select a new sort order in the process list
 
-#### Vi editor command mode
+## Vi editor command mode
 
 ```{.sh}
 Key Usage
@@ -103,3 +103,34 @@ yy Yank (copy) the current line and put it in buffer
 Nyy or yNy Yank (copy) N lines and put it in buffer
 p Paste at the current position the yanked line or lines from the buffer.
 ```
+
+## basic syntax and special charecterstic od scripting
+
+```{.sh}
+# Used to add a comment, except when used as \#, or as #! when starting a script
+\ Used at the end of a line to indicate continuation on to the next line
+; Used to interpret what follows as a new command to be executed next
+$ Indicates what follows is an environment variable
+> Redirect output
+>> Append output
+< Redirect input
+| Used to pipe the result into the next command
+```
+
+## check inside if condition
+
+```{.sh}
+-e file Checks if the file exists.
+-d file Checks if the file is a directory.
+-f file Checks if the file is a regular file (i.e. not a symbolic link, device node, directory, etc.)
+-s file Checks if the file is of non-zero size.
+-g file Checks if the file has sgid set.
+-u file Checks if the file has suid set.
+-r file Checks if the file is readable.
+-w file Checks if the file is writable.
+-x file Checks if the file is executable.
+```
+
+- `if [[ -x /etc/passwd ]] ; then
+  ACTION
+  fi` double bracket ignore the quotes insode if
