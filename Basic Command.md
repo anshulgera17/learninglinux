@@ -180,6 +180,22 @@
 - `mget filenameregex` e.g mget * to get every file in a directory
 - `mput filemameregex` e.g. mput *.txt to upload every txt file to the server
 
+## Commands realted to printer
+
+- `lp <filename>` To print the file to default printer
+- `lp -d printer <filename>` To print to a specific printer (useful if multiple printers are available)
+- `program | lp echo string | lp` To print the output of a program
+- `lp -n number <filename>` To print multiple copies
+- `lpoptions -d printer` To set the default printer
+- `lpq -a` To show the queue status
+- `lpadmin` To configure printer queues
+- `lpstat -p -d` To get a list of available printers, along with their status
+- `lpstat -a` To check the status of all connected printers, including job numbers
+- `cancel job-id` or `lprm job-id` To cancel a print job
+- `lpmove job-id newprinter` To move a print job to new printer
+
+## shortcuts for terminal
+
 - History environment variables like HISTFILE, HISTFILESIZE, HISTSIZE, HISTCONTROL, HISTIGNORE
 - CTRL-L: Clears the screen
 - CTRL-D: Exits the current shell

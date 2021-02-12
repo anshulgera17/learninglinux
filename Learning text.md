@@ -136,3 +136,5 @@ $ Indicates what follows is an environment variable
   fi` double bracket ignore the quotes insode if
 
 - Common UNIX Printing System (CUPS)
+- files are present in /etc/cups printers.conf, and print requests file in /var/spool/cups, logs file /var/log/cups, filters, printer driver and backends are configured in /etc/cups/ppd/, 
+`systemctl status cups`, `sudo systemctl [enable|disable] cups`, `sudo systemctl [start|stop|restart] cups`
