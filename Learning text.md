@@ -134,3 +134,5 @@ $ Indicates what follows is an environment variable
 - `if [[ -x /etc/passwd ]] ; then
   ACTION
   fi` double bracket ignore the quotes insode if
+
+- Common UNIX Printing System (CUPS)

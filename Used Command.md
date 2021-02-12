@@ -3,16 +3,16 @@
 - `sudo dpkg-reconfigure tzdata` Command for set the timezone in ec2 instance 
 - `lsblk`, `vgdisplay` Create the logical volume and add to the existing logical volume in ubuntu EC2 instance. 
 
-#### created instance LVM-Testing
+## created instance LVM-Testing
 
 - create 3 volumes (volume1 + volume2 + volume3 ) + 1 volume( volume4)
 - add first 3 volumes in 1 logical volume name volumeall `lsblk`
 
-#### check the name of the attached volume then 
+## check the name of the attached volume then 
 
 - `sudo pvcreate /dev/xvdf /dev/xvdg /dev/xvdh` 
 
-#### 3 volumes attached to this instance
+## 3 volumes attached to this instance
 
 - `sudo pvdisplay`
 - `sudo vgcreate volumeall /dev/xvdf /dev/xvdg /dev/xvdh`
@@ -20,7 +20,7 @@
 - `sudo vgdisplay` shows volume group size
 - `sudo pvcreate /dev/xvdi`
 
-#### Need to create logical volume and the extend logical volume 
+## Need to create logical volume and the extend logical volume 
 
 - `sudo lvcreate -nfedora64-1 -L8G volumeall`
 - `sudo lvextend -L +20G   /dev/precise-build`
@@ -35,7 +35,7 @@
 - `grep -r udp`
 - `time find / -name core` 
 
-#### check the RAM  or free space
+## check the RAM  or free space
 
 - `cat /proc/meminfo`
 - `vmstat -s`
@@ -48,7 +48,7 @@
 
 - check the port data transmission and configuration for ptpd `sudo ethtool eth4`
 
-#### Database commands
+## Database commands
 
 - `mysql  –u MEDDBA –p`
 - `Masterkey`
@@ -57,7 +57,7 @@
 - `show tables;`
 - `describe tablename;`
 
-#### Check the system level logs
+## Check the system level logs
 
 - `/var/log/dmesg`
 - `/var/log/kern.log`
@@ -94,7 +94,7 @@
 
 - `dig url +trace`
 
-#### Screen command use
+## Screen command use
 
 - screen -S {name} # where 'name' is any name you want to give your screen session
 - Then you're in the screen session, which looks like nothing has changed practically
@@ -188,11 +188,8 @@ done
 ```{.sh}
 {A..Z}
 {1..10}
-
 for d in $(<data_file)
-
 for j in *.c
-
 for f in  $(find . -name *.c)
 ```
 
@@ -203,19 +200,6 @@ sfjsndfke
 '
 this is also comment
 0-> stdin, 1-> stdout, 2-> stderr
-```
-
-```{.sh}
-command &> file 
-
-command | command2
-
-command 2>&1 | command2
-
-command |& command2
-
-command >> file
-command &>> file
 ```
 
 ```{.sh}
@@ -233,31 +217,4 @@ exec N<> myfile
 exec N>&- or exec N<&-
 exec 7>/tmp/myfile7
 lsof -p $$
-```
-
-```{.sh}
-case expression in 
-pattern 1 )
-command list;;
-pattern 2 )
-command list ;;
-esac
-```
-
-```{.sh}
-case $ans in 
-yes|YES|y|Y|y.x ) echo "will do !";;
-n*|N*) echo "will NOT do!";;
-*) echo "Oops!";;
-esac
-```
-
-```{.sh}
-if 
-command list 
-then 
-command list
-else 
-command list
-fi
 ```
