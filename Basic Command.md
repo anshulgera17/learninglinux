@@ -99,7 +99,8 @@
 - `whereis diff` locate packages of the program 
 - `locate filename` for find file in the system you can use locate command also 
 - `locate -e filename` find the file name in server
-- `last reboot` check last reboot 
+- `last reboot` check last reboot
+- `last` shows the last time each user logged into the system
 - `ftp hostname`
  or
 - `ftp://username:password@hostname`
@@ -193,6 +194,32 @@
 - `lpstat -a` To check the status of all connected printers, including job numbers
 - `cancel job-id` or `lprm job-id` To cancel a print job
 - `lpmove job-id newprinter` To move a print job to new printer
+- `enscript -p psfile.ps textfile.txt` Convert a text file to PostScript (saved to psfile.ps)
+- `enscript -n -p psfile.ps textfile.txt` Convert a text file to n columns where n=1-9 (saved in psfile.ps)
+- `enscript textfile.txt` Print a text file directly to the default printer
+
+## Commands related to PDF
+
+- `pdf2ps file.pdf` Converts file.pdf to file.ps
+- `ps2pdf file.ps` Converts file.ps to file.pdf
+- `pstopdf input.ps output.pdf` Converts input.ps to output.pdf
+- `pdftops input.pdf output.ps` Converts input.pdf to output.ps
+- `convert input.ps output.pdf` Converts input.ps to output.pdf
+- `convert input.pdf output.ps` Converts input.pdf to output.ps
+- `qpdf --empty --pages 1.pdf 2.pdf -- 12.pdf` Merge the two documents 1.pdf and 2.pdf. The output will be saved to 12.pdf.
+- `qpdf --empty --pages 1.pdf 1-2 -- new.pdf` Write only pages 1 and 2 of 1.pdf. The output will be saved to new.pdf.
+- `qpdf --rotate=+90:1 1.pdf 1r.pdf`, Rotate page 1 of 1.pdf 90 degrees clockwise and save to 1r.pdf
+- `qpdf --rotate=+90:1-z 1.pdf 1r-all.pdf` Rotate all pages of 1.pdf 90 degrees clockwise and save to 1r-all.pdf
+- `qpdf --encrypt mypw mypw 128 -- public.pdf private.pdf` Encrypt with 128 bits public.pdf using as the passwd mypw with output as private.pdf
+- `qpdf --decrypt --password=mypw private.pdf file-decrypted.pdf` Decrypt private.pdf with output as file-decrypted.pdf
+- `pdftk 1.pdf 2.pdf cat output 12.pdf` Merge the two documents 1.pdf and 2.pdf. The output will be saved to 12.pdf.
+- `pdftk A=1.pdf cat A1-2 output new.pdf` Write only pages 1 and 2 of 1.pdf. The output will be saved to new.pdf.
+- `pdftk A=1.pdf cat A1-endright output new.pdf` Rotate all pages of 1.pdf 90 degrees clockwise and save result in new.pdf.
+- `gs -dBATCH -dNOPAUSE -q -sDEVICE=pdfwrite  -sOutputFile=all.pdf file1.pdf file2.pdf file3.pdf` Combine three PDF files into one
+- `gs -sDEVICE=pdfwrite -dNOPAUSE -dBATCH -dDOPDFMARKS=false -dFirstPage=10 -dLastPage=20\ -sOutputFile=split.pdf file.pdf`Split pages 10 to 20 out of a PDF file
+- `pdfinfo` Extracts info about PDF document
+- `flpsed` Adds data to PostScript
+- `pdfmod` Provides GUI for PDF modification
 
 ## shortcuts for terminal
 
