@@ -21,7 +21,7 @@
 - `grep` print lines matching a pattern
 - examples of grep  `grep -r 'string'`, `egrep`, `zgrep -e`, `grep -v pattern filename`, `grep [0-9] filename`, `grep -C 3 pattern filename`
 - `strings` strings is used to extract all printable character strings found in the file or files given as arguments. It is useful in - locating human-readable content embedded in binary files; for text files one can just use grep.
-- `tr` translate or delete characters , `cat city | tr [a-z] [A-Z], tr '{}' '[]' inputfile outputfile`, 
+- `tr` translate or delete characters , `cat city | tr [a-z] [A-Z], tr '{}' '[]' inputfile outputfile`
 - `tee` tee takes the output from any command, and, while sending it to standard output, it also saves it to a file. `find -name "g*cfs" | tee /tmp/tee_output`
 - `wc` print the number of newlines words and bytes in files
 - `uniq` uniq removes duplicate consecutive lines in a text file and is useful for simplifying the text display. `sort file1 file2 |  uniq > file3, uniq -c filename`
@@ -85,7 +85,7 @@
 - `zdiff file1.txt.gz file2.txt.gz` To compare two compressed files
 - `useradd`, `sudo useradd -m -c "Anshul gera" -s /bin/bash anshul` create user
 - `sudo passwd anshul` add password for user
-- `userdel`, `sudo userdel -r anshul` delete user 
+- `userdel`, `sudo userdel -r anshul` delete user
 - `groupadd` :
 - `groupdel` :
 - `env` :
@@ -96,8 +96,8 @@
 - `halt``poweroff` for halt the system
 - `sudo shutdown -h 10:00 "Shutting down for scheduled maintenance."` for restart the server or node `shutdown -r` `reboot`
 - `which diff` locate the program on filesystem
-- `whereis diff` locate packages of the program 
-- `locate filename` for find file in the system you can use locate command also 
+- `whereis diff` locate packages of the program
+- `locate filename` for find file in the system you can use locate command also
 - `locate -e filename` find the file name in server
 - `last reboot` check last reboot
 - `last` shows the last time each user logged into the system
@@ -108,11 +108,11 @@
 
 ## sort command uses
 
-- `sort` sort lines of text file, 
+- `sort` sort lines of text file
 - `sort filename` sort the lines in the specified file, according to the character at the beginning of each line
 - `sort -r filename` sort the lines in reverse order
 - `sort -k 3 filename` sort the lines by the 3rd field on each line instead of the beginning
-- `sort -u filename` checks for the unique values after sorting the records 
+- `sort -u filename` checks for the unique values after sorting the records
 
 ## Find Command uses
 

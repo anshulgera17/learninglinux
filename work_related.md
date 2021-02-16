@@ -1,6 +1,6 @@
 # Office Work Related
- 
- ```{.sh}
+
+```{.sh}
  sudo pssh -p 1 -h /hostsonly -O StrictHostKeyChecking=no -l  evertz  -A -i "tail -5 /var/log/evertz/hbrmt.txt"
  less /var/log/evertz/hbrmt.txt
  vi /usr/ort/bin/config/0/stream.xml
@@ -19,7 +19,7 @@
  site show  sources
 ```
 
-##### Salt commands
+## Salt commands
 
  ```{.sh}
  sudo salt-run jobs.active # for check high state status

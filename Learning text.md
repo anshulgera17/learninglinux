@@ -23,7 +23,7 @@
 - /bin - for normal binary files
 - /sbin - for adminstrative binary files
 
-- The /dev directory contains device nodes, a type of pseudo-file used by most hardware and software devices, except for network devices. 
+- The /dev directory contains device nodes, a type of pseudo-file used by most hardware and software devices, except for network devices.
 
 - The /var directory contains files that are expected to change in size and content as the system is running (var stands for variable), such as the entries in the following directories:
 
@@ -47,7 +47,7 @@
 - PPID - parent process id
 - TID - thread id
 - UID - User Id
-- GID - Group Id 
+- GID - Group Id
 - EUID(Effective ID) - determine the access right of the user
 - EGID - determine the access right of the group
 - RUID - identified the user who start the process
@@ -59,7 +59,7 @@
 - w, top, uptime - shows load average (0.45 0.17 0.12) 0.45 - for last min, 0.17 - for last 5 min, 0.12 - for last 15 min
 - third line of top command: The percentage of user jobs running at a lower priority (niceness - ni) is then listed. Idle mode (id) should be low if the load average is high, and vice versa. The percentage of jobs waiting (wa) for I/O is listed. Interrupts include the percentage of hardware (hi) vs. software interrupts (si). Steal time (st) is generally used with virtual machines, which has some of its idle CPU time taken for other uses.
 
-## top command columns details:
+## top command columns details
 
 - Process Identification Number (PID)
 - Process owner (USER)
@@ -136,5 +136,5 @@ $ Indicates what follows is an environment variable
   fi` double bracket ignore the quotes insode if
 
 - Common UNIX Printing System (CUPS)
-- files are present in /etc/cups printers.conf, and print requests file in /var/spool/cups, logs file /var/log/cups, filters, printer driver and backends are configured in /etc/cups/ppd/, 
+- files are present in /etc/cups printers.conf, and print requests file in /var/spool/cups, logs file /var/log/cups, filters, printer driver and backends are configured in /etc/cups/ppd/,
 `systemctl status cups`, `sudo systemctl [enable|disable] cups`, `sudo systemctl [start|stop|restart] cups`
