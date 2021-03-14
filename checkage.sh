@@ -7,6 +7,5 @@ elif [[ $AGE -ge 30 ]] && [[ $AGE -lt 40 ]]; then
 elif [[ $AGE -ge 40 ]] && [[ $AGE -lt 50 ]]; then
 	echo "You are in your 40s"
 else
-	echo at AGE=$AGE, you are not in the proper rnage of 21-50
+	echo at AGE=$AGE, you are not in the proper range of 21-50
 fi
-

@@ -43,7 +43,7 @@
 - `tail` print last 10 lines of a file.
 - `free` to check the RAM of a server
 - `du -sch folder_name` check directory size `du -sch /etc`
-- `du -sch /home/evertz/*  | sort -h` show all sub folders size with sorted format
+- `du -sch /home/anshul/*  | sort -h` show all sub folders size with sorted format
 - `nproc` number of CPUs in a server.
 - `cut` cut is used for manipulating column-based files and is designed to extract specific columns. `ls -l | cut -d" " -f3`
 - `paste` combine fields(such as name or phone number from different files) `paste file1 file2`, `paste -d file1 file2`
@@ -120,7 +120,7 @@
 - `find / -xdev -type f -size +100000c -exec ls -la {} \; 2>/dev/null | sort -nk5 | tail -20` find the 20 files which are having max size 
 - `find /etc -not -iname "*.conf"` find files in etc directory not with .conf and ignore case also
 - `find /usr/bin -size +2M` find files which are more than 2MB in /usr/bin directory
-- `find /home/evertz/anshul/ -name "*.txt" -exec chmod 700 {} \;` find .txt file and then modify their permission using chmod 
+- `find /home/anshul/ -name "*.txt" -exec chmod 700 {} \;` find .txt file and then modify their permission using chmod 
 - `find . -name "*.txt" -exec grep -i "any word" {} \;` Find any word in unknown file
 - `find /path/to/directory/ -mindepth 1 -mtime +5 -delete` Delete files and folder which are older than 5 days
 
