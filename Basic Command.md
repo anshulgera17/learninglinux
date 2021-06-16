@@ -136,7 +136,7 @@
 
 ## awk command uses
 
-- `awk` find and replaces text
+- `awk` Awk is a scripting language used for manipulating data and generating reports.The awk command programming language requires no compiling, and allows the user to use variables, numeric functions, string functions, and logical operators.
 - `awk '{ print $0 }' /etc/passwd`  print entire file
 - `awk -F: '{ print $1 }' /etc/passwd`  print first field(column) of every line, seperated by a space
 - `awk -F: '{ print $1 $7 }'/etc/passwd` print first and seventh field of every line
