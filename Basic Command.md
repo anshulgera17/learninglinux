@@ -133,6 +133,7 @@
 - `sed 's/"//g' filename > another_file` all remove all double quotes
 - `sed 's/$/,/g' filename > another_file` add coma at end of the each line
 - `sed -i s/pattern/replace_pattern/g' filename` save changes for string substitution in the same file
+- NF - from line number, NT to line number, p for print, !d for not delete
 
 ## awk command uses
 
