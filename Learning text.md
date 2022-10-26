@@ -1,5 +1,7 @@
 # Linux Learning
 
+- $@ used for read the array or array variable
+- $# used to get the number of arguments passed 
 - Red Hat Family Systems (including CentOS and Fedora)
 - SUSE Family Systems (including openSUSE) - using zypper for install, update and remove packages
 - Debian Family Systems (including Ubuntu and Linux Mint).
