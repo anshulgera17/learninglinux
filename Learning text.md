@@ -1,4 +1,25 @@
 # Linux Learning
+### Interger comparison
+- eq is equal to `if [ "$a" -eq "$b" ]`
+- ne is not equal to `if [ "$a" -ne "$b" ]`
+- gt is greater then `if [ "$a" -gt "$b" ]`
+- ge is greater then or equal to `if [ "$a" -ge "$b" ]`
+- lt is less then `if [ "$a" -lt "$b" ]`
+- le is less then or equal to `if [ "$a" -le "$b" ]`
+- < is less then `(( "$a" < "$b" ))`
+- <= is less then or equal to `(( "$a" <= "$b" ))`
+- > is greater then `(( "$a" > "$b" ))`
+- >= is greater then or equal to `(( "$a" >= "$b" ))`
+
+
+### String Comparison
+- = is equal to `if [ "$a" = "$b" ]`
+- == is equal to `if [ "$a" == "$b" ]`
+- != is not equal to `if [ "$a" != "$b" ]`
+- < is less than, in ASCII alphabetical order `if [[ "$a" < "$b" ]]`
+- > is greater than, in ASCII alphabetical order `if [[ "$a" > "$b" ]]`
+- z string is null, that is, has zero length
+
 
 - $@ used for read the array or array variable
 - $# used to get the number of arguments passed 
