@@ -106,6 +106,13 @@
 - `ftp://username:password@hostname`
 - `dd` disk to disk copying `dd if=/dev/sda of=sda.mbr bs=512 count=1`
 
+## bc command is used for decimal involved calculation expr and normal operators won't work
+- `echo "20.5+5" | bc`
+- `echo "20.5-5" | bc`
+- `echo "20.5*5" | bc`
+- `echo "scale=2;20.5/5" | bc`
+
+
 ## sort command uses
 
 - `sort` sort lines of text file
