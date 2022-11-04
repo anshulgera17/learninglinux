@@ -31,3 +31,5 @@ case $value in
 	echo "unknown input" ;;
 esac
 exit 0
+
+# if second case won't work then set LANG=C
