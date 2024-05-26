@@ -6,8 +6,6 @@ S3_BUCKET="s3://twarit-tcp-logs"
 # Get the current date in YYYYMMDD format
 CURRENT_DATE=$(date +%d%m%Y)
 
-CURRENT_DATE=$(date +%d%m%Y)
-
 WORK_DIR="/var/tcpip/logs/"
 
 # Log file path
